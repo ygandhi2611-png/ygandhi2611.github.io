@@ -7,31 +7,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
 <style>
 :root{
-  --bg:#FBFCF8;
-  --bg2:#f3f4ef;
-  --navy:#231B18;
-  --text:#231B18;
-  --muted:#3d3530;
-  --soft:#6b5f58;
-  --card:#ffffff;
-  --border:#e2ddd8;
-  --cream:#FBFCF8;
-  --shadow:0 4px 24px rgba(35,27,24,0.07);
-  --shadow-lg:0 16px 48px rgba(35,27,24,0.12);
+  --bg:#FBFCF8;--bg2:#f3f4ef;--navy:#231B18;--text:#231B18;
+  --muted:#3d3530;--soft:#6b5f58;--card:#ffffff;--border:#e2ddd8;
+  --shadow:0 4px 24px rgba(35,27,24,0.07);--shadow-lg:0 16px 48px rgba(35,27,24,0.12);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
 /* NAV */
-nav{
-  position:fixed;top:0;width:100%;z-index:200;
-  padding:0 3rem;height:54px;
-  display:flex;align-items:center;justify-content:space-between;
-  background:#231B18;
-  border-bottom:1px solid rgba(251,252,248,.07);
-  transition:box-shadow .4s;
-}
+nav{position:fixed;top:0;width:100%;z-index:200;padding:0 3rem;height:54px;display:flex;align-items:center;justify-content:space-between;background:#231B18;border-bottom:1px solid rgba(251,252,248,.07);transition:box-shadow .4s}
 nav.scrolled{box-shadow:0 4px 30px rgba(35,27,24,.35)}
 .nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#FBFCF8;letter-spacing:-.01em}
 .nav-links{display:flex;gap:2rem;list-style:none}
@@ -40,88 +25,38 @@ nav.scrolled{box-shadow:0 4px 30px rgba(35,27,24,.35)}
 .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
 .nav-toggle span{width:22px;height:1.5px;background:#FBFCF8;display:block}
 
-/* HERO — photo left, text right */
-#hero{
-  min-height:100vh;background:var(--bg);
-  display:flex;align-items:center;
-  padding:5rem 3rem 4rem;overflow:hidden;
-}
-.hero-inner{
-  max-width:1100px;margin:0 auto;width:100%;
-  display:grid;grid-template-columns:400px 1fr;gap:5rem;align-items:center;
-}
-.hero-photo-wrap{
-  opacity:0;animation:fadeUp 1s .2s cubic-bezier(.16,1,.3,1) forwards;
-}
-.hp-main{
-  width:100%;height:580px;border-radius:20px;overflow:hidden;
-  box-shadow:var(--shadow-lg);border:3px solid #fff;
-  transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s;
-}
+/* HERO */
+#hero{min-height:100vh;background:var(--bg);display:flex;align-items:center;padding:5rem 3rem 4rem;overflow:hidden}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:400px 1fr;gap:5rem;align-items:center}
+.hero-photo-wrap{opacity:0;animation:fadeUp 1s .2s cubic-bezier(.16,1,.3,1) forwards}
+.hp-main{width:100%;height:580px;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);border:3px solid #fff;transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s}
 .hp-main:hover{transform:scale(1.02);box-shadow:0 24px 60px rgba(35,27,24,.2)}
 .hp-main img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;filter:brightness(1.02) contrast(1.03)}
-.hero-text-wrap{
-  opacity:0;animation:fadeUp 1s .35s cubic-bezier(.16,1,.3,1) forwards;
-}
-.hero-eyebrow{
-  font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--soft);margin-bottom:1rem;
-}
-.hero-name{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(3.5rem,6.5vw,6rem);font-weight:800;
-  letter-spacing:-.03em;line-height:1.0;color:#231B18;margin-bottom:1.4rem;
-}
-.hero-tagline{
-  font-size:1.05rem;font-weight:300;color:var(--muted);
-  line-height:1.7;margin-bottom:.4rem;
-}
-.hero-sub{
-  font-size:.85rem;color:var(--soft);font-weight:400;margin-bottom:2.5rem;
-}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
-.btn-dark{
-  padding:.85rem 2.2rem;border-radius:50px;background:#231B18;color:#FBFCF8;
-  font-size:.88rem;font-weight:600;text-decoration:none;transition:.2s;
-  box-shadow:0 4px 18px rgba(35,27,24,.22);display:inline-block;
-}
+.hero-text-wrap{opacity:0;animation:fadeUp 1s .35s cubic-bezier(.16,1,.3,1) forwards}
+.hero-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:1rem}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,6.5vw,6rem);font-weight:800;letter-spacing:-.03em;line-height:1.0;color:#231B18;margin-bottom:1.4rem}
+.hero-tagline{font-size:1.05rem;font-weight:300;color:var(--muted);line-height:1.7;margin-bottom:.4rem}
+.hero-sub{font-size:.85rem;color:var(--soft);font-weight:400;margin-bottom:2.5rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-dark{padding:.85rem 2.2rem;border-radius:50px;background:#231B18;color:#FBFCF8;font-size:.88rem;font-weight:600;text-decoration:none;transition:.2s;box-shadow:0 4px 18px rgba(35,27,24,.22);display:inline-block}
 .btn-dark:hover{background:#3d302b;transform:scale(1.02)}
-.btn-light{
-  padding:.85rem 2.2rem;border-radius:50px;
-  background:rgba(35,27,24,.06);color:#231B18;
-  font-size:.88rem;font-weight:600;text-decoration:none;
-  transition:.2s;border:1.5px solid var(--border);display:inline-block;
-}
-.btn-resume{
-  padding:.85rem 2.2rem;border-radius:50px;
-  background:transparent;color:#231B18;
-  font-size:.88rem;font-weight:600;text-decoration:none;
-  transition:.2s;border:1.5px solid #231B18;display:inline-flex;
-  align-items:center;gap:.5rem;
-}
+.btn-light{padding:.85rem 2.2rem;border-radius:50px;background:rgba(35,27,24,.06);color:#231B18;font-size:.88rem;font-weight:600;text-decoration:none;transition:.2s;border:1.5px solid var(--border);display:inline-block}
+.btn-light:hover{background:rgba(35,27,24,.12)}
+.btn-resume{padding:.85rem 2.2rem;border-radius:50px;background:transparent;color:#231B18;font-size:.88rem;font-weight:600;text-decoration:none;transition:.2s;border:1.5px solid #231B18;display:inline-flex;align-items:center;gap:.5rem}
 .btn-resume:hover{background:#231B18;color:#FBFCF8}
 
 /* SECTION SHARED */
 .s-inner{max-width:1080px;margin:0 auto;padding:7rem 2.5rem}
 .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:.7rem}
-.big-title{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;
-  letter-spacing:-.03em;line-height:1.12;color:#231B18;margin-bottom:1.5rem;
-}
+.big-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;letter-spacing:-.03em;line-height:1.12;color:#231B18;margin-bottom:1.5rem}
 .big-title span{color:#231B18;border-bottom:3px solid rgba(35,27,24,.25);padding-bottom:3px}
 .s-divider{width:48px;height:3px;background:linear-gradient(90deg,#231B18,rgba(35,27,24,.2));border-radius:3px;margin-bottom:2.8rem}
 
-/* ABOUT — landscape photo, single column */
+/* ABOUT */
 #about{background:var(--bg2)}
-.about-grid{display:grid;grid-template-columns:1fr;gap:3rem;}
-.about-photos{position:relative;height:auto;}
-.ap-main{
-  position:relative;width:100%;height:340px;
-  border-radius:20px;overflow:hidden;
-  box-shadow:var(--shadow-lg);border:3px solid #fff;
-  transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s;
-}
+.about-grid{display:grid;grid-template-columns:1fr;gap:3rem}
+.about-photos{position:relative;height:auto}
+.ap-main{position:relative;width:100%;height:340px;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);border:3px solid #fff;transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s}
 .ap-main:hover{transform:scale(1.02);box-shadow:0 24px 60px rgba(35,27,24,.18)}
 .ap-main img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(1.03) saturate(1.05)}
 .about-text .eyebrow{text-align:left}
@@ -139,11 +74,7 @@ nav.scrolled{box-shadow:0 4px 30px rgba(35,27,24,.35)}
 /* EXPERIENCE */
 #experience{background:var(--bg)}
 .exp-list{display:flex;flex-direction:column;gap:0}
-.exp-row{
-  display:grid;grid-template-columns:180px 1fr;gap:3rem;
-  padding:2.5rem 0;border-top:1px solid var(--border);
-  transition:background .3s,padding .3s,border-radius .3s,margin .3s;
-}
+.exp-row{display:grid;grid-template-columns:180px 1fr;gap:3rem;padding:2.5rem 0;border-top:1px solid var(--border);transition:background .3s,padding .3s,border-radius .3s,margin .3s}
 .exp-row:hover{background:rgba(35,27,24,.03);padding-left:1rem;padding-right:1rem;border-radius:14px;margin:0 -1rem}
 .exp-left{padding-top:.1rem}
 .exp-tag{font-size:.7rem;font-weight:700;color:#FBFCF8;background:#231B18;border-radius:50px;padding:.22rem .75rem;display:inline-block;margin-bottom:.5rem;white-space:nowrap}
@@ -157,20 +88,11 @@ nav.scrolled{box-shadow:0 4px 30px rgba(35,27,24,.35)}
 /* SKILLS */
 #skills{background:var(--bg2)}
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.3rem;margin-top:3.5rem}
-.skill-category{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:18px;padding:1.8rem;box-shadow:var(--shadow);
-  transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s;
-  border-top:3px solid #231B18;
-}
+.skill-category{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.8rem;box-shadow:var(--shadow);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s;border-top:3px solid #231B18}
 .skill-category:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
 .skill-cat-title{font-family:'Playfair Display',serif;font-weight:700;margin-bottom:1.1rem;color:#231B18;font-size:1rem}
 .skill-tags{display:flex;flex-wrap:wrap;gap:.4rem}
-.skill-tag{
-  padding:.28rem .8rem;border-radius:50px;font-size:.73rem;font-weight:600;
-  background:rgba(35,27,24,.06);border:1px solid rgba(35,27,24,.12);color:#231B18;
-  transition:background .22s,color .22s,transform .22s,box-shadow .22s;cursor:default;
-}
+.skill-tag{padding:.28rem .8rem;border-radius:50px;font-size:.73rem;font-weight:600;background:rgba(35,27,24,.06);border:1px solid rgba(35,27,24,.12);color:#231B18;transition:background .22s,color .22s,transform .22s,box-shadow .22s;cursor:default}
 .skill-tag:hover{background:#231B18;color:#FBFCF8;transform:translateY(-2px) scale(1.04);box-shadow:0 4px 12px rgba(35,27,24,.18)}
 .skill-tag.warm{background:#231B18;border-color:#231B18;color:#FBFCF8}
 .skill-tag.warm:hover{background:#3d302b;transform:translateY(-2px) scale(1.04)}
@@ -178,26 +100,57 @@ nav.scrolled{box-shadow:0 4px 30px rgba(35,27,24,.35)}
 /* PROJECTS */
 #projects{background:var(--bg)}
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3.5rem}
-.proj-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:16px;padding:2rem;
-  transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s,border-color .4s;
-  transform-style:preserve-3d;
-}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s,border-color .4s;transform-style:preserve-3d;cursor:pointer;position:relative;overflow:hidden}
+.proj-card::after{content:'View Details →';position:absolute;bottom:1.5rem;right:1.5rem;font-size:.72rem;font-weight:600;color:var(--soft);opacity:0;transition:opacity .3s}
 .proj-card:hover{transform:translateY(-6px) rotateX(2deg);box-shadow:0 20px 50px rgba(35,27,24,.14);border-color:rgba(35,27,24,.3)}
+.proj-card:hover::after{opacity:1}
 .proj-n{font-size:.68rem;font-weight:700;color:var(--soft);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.7rem}
 .proj-t{font-size:.96rem;font-weight:700;color:#231B18;line-height:1.35;margin-bottom:.5rem}
 .proj-d{font-size:.81rem;color:var(--muted);line-height:1.75;font-weight:300}
 .proj-date{font-size:.7rem;color:var(--soft);margin-top:.9rem;font-weight:500}
 
+/* PROJECT MODAL */
+.modal-overlay{
+  position:fixed;inset:0;background:rgba(35,27,24,.55);z-index:500;
+  display:flex;align-items:center;justify-content:center;padding:2rem;
+  opacity:0;pointer-events:none;transition:opacity .35s cubic-bezier(.16,1,.3,1);
+  backdrop-filter:blur(6px);
+}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{
+  background:var(--bg);border-radius:24px;max-width:720px;width:100%;
+  max-height:88vh;overflow-y:auto;
+  box-shadow:0 32px 80px rgba(35,27,24,.22);
+  transform:translateY(30px) scale(.97);transition:transform .35s cubic-bezier(.16,1,.3,1);
+  position:relative;
+}
+.modal-overlay.open .modal{transform:translateY(0) scale(1)}
+.modal-header{padding:2.5rem 2.5rem 0}
+.modal-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:.6rem}
+.modal-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:#231B18;line-height:1.15;margin-bottom:.4rem}
+.modal-date{font-size:.75rem;color:var(--soft);font-weight:500;margin-bottom:1.5rem}
+.modal-divider{height:2px;background:linear-gradient(90deg,#231B18,rgba(35,27,24,.1));border-radius:2px;margin-bottom:2rem}
+.modal-body{padding:0 2.5rem 2.5rem}
+.modal-section{margin-bottom:1.8rem}
+.modal-section h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#231B18;margin-bottom:.7rem}
+.modal-section p{font-size:.88rem;color:var(--muted);line-height:1.85;font-weight:300}
+.modal-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
+.modal-tag{font-size:.72rem;font-weight:600;padding:.25rem .8rem;border-radius:50px;background:rgba(35,27,24,.06);border:1px solid rgba(35,27,24,.12);color:#231B18}
+.modal-close{
+  position:absolute;top:1.2rem;right:1.2rem;
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(35,27,24,.08);border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;color:#231B18;transition:.2s;font-family:'Inter',sans-serif;
+}
+.modal-close:hover{background:#231B18;color:#FBFCF8}
+.modal::-webkit-scrollbar{width:4px}
+.modal::-webkit-scrollbar-thumb{background:rgba(35,27,24,.15);border-radius:2px}
+
 /* EDUCATION */
 #education{background:var(--bg2)}
 .edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:3.5rem}
-.edu-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:16px;padding:2rem;position:relative;overflow:hidden;
-  transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s;
-}
+.edu-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s}
 .edu-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#231B18}
 .edu-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(35,27,24,.12)}
 .edu-deg{font-size:.97rem;font-weight:700;color:#231B18;margin-bottom:.25rem}
@@ -208,14 +161,13 @@ nav.scrolled{box-shadow:0 4px 30px rgba(35,27,24,.35)}
 /* CONTACT */
 #contact{background:#231B18;padding:7rem 2rem;text-align:center}
 .contact-hl{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:800;letter-spacing:-.04em;color:#FBFCF8;margin-bottom:1rem;line-height:1.05}
-.contact-sub{font-size:1rem;font-weight:300;color:rgba(251,252,248,.55);margin-bottom:3rem;max-width:480px;margin-left:auto;margin-right:auto}
+.contact-sub{font-size:1rem;font-weight:300;color:rgba(251,252,248,.85);margin-bottom:3rem;max-width:480px;margin-left:auto;margin-right:auto}
 .contact-row{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
 .clink{display:flex;align-items:center;gap:.6rem;background:rgba(251,252,248,.08);border:1px solid rgba(251,252,248,.12);border-radius:50px;padding:.75rem 1.5rem;color:#FBFCF8;text-decoration:none;font-size:.83rem;font-weight:500;transition:.2s}
 .clink:hover{background:rgba(251,252,248,.16);transform:translateY(-2px)}
 .clink svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
 .clink.primary{background:#FBFCF8;color:#231B18;border-color:#FBFCF8;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif}
 .clink.primary:hover{background:#ede8e4;border-color:#ede8e4}
-
 footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8rem;text-align:center;font-size:.73rem;color:rgba(251,252,248,.2)}
 
 /* ANIMATIONS */
@@ -226,8 +178,6 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
 .reveal-left.visible{opacity:1;transform:translateX(0)}
 .reveal-right{opacity:0;transform:translateX(50px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
 .reveal-right.visible{opacity:1;transform:translateX(0)}
-.reveal-scale{opacity:0;transform:scale(.94);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
-.reveal-scale.visible{opacity:1;transform:scale(1)}
 .word-wrap .word{display:inline-block;opacity:0;transform:translateY(28px) rotate(.4deg);transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)}
 .word-wrap.visible .word{opacity:1;transform:translateY(0) rotate(0deg)}
 
@@ -250,6 +200,8 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
   .exp-row{grid-template-columns:1fr}
   .proj-grid{grid-template-columns:1fr}
   .skills-grid{grid-template-columns:1fr}
+  .modal{border-radius:16px}
+  .modal-header,.modal-body{padding-left:1.5rem;padding-right:1.5rem}
 }
 </style>
 </head>
@@ -266,12 +218,10 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- HERO: photo left, text right -->
+<!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-photo-wrap">
@@ -288,7 +238,7 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
         <a href="#contact" class="btn-dark">Get in Touch</a>
         <a href="#experience" class="btn-light">View Experience</a>
         <a href="resume.pdf" download="Yash_Gandhi_Resume.pdf" class="btn-resume">
-          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download Resume
         </a>
       </div>
@@ -296,7 +246,7 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
   </div>
 </section>
 
-<!-- ABOUT: landscape photo + text below -->
+<!-- ABOUT -->
 <section id="about">
   <div class="s-inner">
     <div class="about-grid">
@@ -328,7 +278,7 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
 <div class="stats-strip">
   <div class="stats-inner">
     <div class="reveal"><div class="stat-n" data-count="3" data-suffix="+">3+</div><div class="stat-l">Years Experience</div></div>
-    <div class="reveal" style="transition-delay:.1s"><div class="stat-n" data-count="6" data-suffix="">6</div><div class="stat-l">Key Projects</div></div>
+    <div class="reveal" style="transition-delay:.1s"><div class="stat-n" data-count="8" data-suffix="">8</div><div class="stat-l">Key Projects</div></div>
     <div class="reveal" style="transition-delay:.2s"><div class="stat-n" data-count="5" data-suffix="">5</div><div class="stat-l">Roles &amp; Positions</div></div>
     <div class="reveal" style="transition-delay:.3s"><div class="stat-n" data-count="30" data-suffix="%">30%</div><div class="stat-l">Review Cycle Reduction · BD</div></div>
   </div>
@@ -341,7 +291,6 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
     <h2 class="big-title reveal">Professional <span>Experience</span></h2>
     <div class="s-divider reveal"></div>
     <div class="exp-list">
-
       <div class="exp-row reveal">
         <div class="exp-left">
           <div class="exp-tag">Dec 2025 – Now</div>
@@ -351,13 +300,12 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
           <div class="exp-role">Regulatory Affairs Project Analyst (Volunteer)</div>
           <div class="exp-place">Biosimilars · Pre-IND Regulatory Support</div>
           <ul class="exp-ul">
-            <li>Leading early-stage regulatory planning for a biosimilar insulin initiative, developing CMC documentation frameworks and traceability controls.</li>
-            <li>Contributing to FDA INTERACT and pre-BLA meeting briefing materials to enable early regulatory engagement.</li>
-            <li>Conducting regulatory gap assessments against reference product data and drafting quality documentation to support cGMP readiness.</li>
+            <li>Leading early-stage regulatory planning for a biosimilar insulin initiative, independently developing CMC documentation frameworks, basic quality system structure, and traceability controls.</li>
+            <li>Executing comprehensive gap analysis between reference product data and preliminary process controls to align project documentation with FDA 21 CFR 210/211 guidelines.</li>
+            <li>Authoring foundational QA documents, stability outlines, analytical-method templates, and change-control forms in collaboration with an external regulatory consultant to establish cGMP compliance groundwork.</li>
           </ul>
         </div>
       </div>
-
       <div class="exp-row reveal">
         <div class="exp-left">
           <div class="exp-tag">Jan – Jun 2025</div>
@@ -369,14 +317,11 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
           <ul class="exp-ul">
             <li>Planned and executed regulatory documentation for FDA 510(k) and EU MDR Class II device submissions, ensuring compliance with applicable QSR and ISO standards.</li>
             <li>Standardized FDA and EU MDR submission content by applying regulatory frameworks and translating technical data into reviewer-friendly documentation for Q-Sub and technical files.</li>
-            <li>Led migration of global Regulatory Affairs and Quality repositories from Confluence Server to Confluence Cloud, restructuring submission documentation into standardized, inspection-ready frameworks aligned with FDA QSR and ISO 13485.</li>
-            <li>Designed structured metadata taxonomy, document lifecycle controls, and versioning logic to ensure traceability across 510(k), EU MDR Technical Files, and post-market activities, strengthening regulatory data integrity.</li>
-            <li>Established controlled document routing workflows and authored SOPs governing document control, submission archiving, and repository governance to maintain inspection readiness.</li>
-            <li>Partnered with global Regulatory Affairs teams to map legacy submission records into cloud-based RIM-aligned architecture, resolving documentation gaps and improving document retrieval efficiency by ~30%, reducing submission preparation time.</li>
+            <li>Improved document traceability and reduced regulatory review turnaround by ~30% by migrating global regulatory repositories to Confluence Cloud.</li>
+            <li>Collaborated cross-functionally and managed concurrent deliverables independently, aligning labeling, verification, and change-control records with current regulatory expectations.</li>
           </ul>
         </div>
       </div>
-
       <div class="exp-row reveal">
         <div class="exp-left">
           <div class="exp-tag">Oct – Dec 2024</div>
@@ -391,7 +336,6 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
           </ul>
         </div>
       </div>
-
       <div class="exp-row reveal">
         <div class="exp-left">
           <div class="exp-tag">Feb – Aug 2023</div>
@@ -401,14 +345,13 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
           <div class="exp-role">Supply Chain Management Analyst (PPC)</div>
           <div class="exp-place">Sterile Injectables · cGMP · ANDA</div>
           <ul class="exp-ul">
-            <li>Executed production planning and batch scheduling for sterile injectable manufacturing using SAP Production Planning.</li>
-            <li>Reviewed Batch Manufacturing Records in a 21 CFR Part 211 cGMP environment for completeness and GDP adherence.</li>
-            <li>Collaborated with Regulatory CMC teams to compile ANDA Module 3 documentation and post-approval change control activities.</li>
-            <li>Initiated and tracked manufacturing deviations in SAP/QMS, coordinating CAPA follow-up activities.</li>
+            <li>Collaborated with Regulatory Affairs (CMC), QA/QC, and Manufacturing teams to support ANDA Module 3 documentation, batch readiness, and post-approval change control activities.</li>
+            <li>Performed compliance reviews of batch records, deviations, and labeling documentation in alignment with FDA 21 CFR 210/211 and cGMP requirements.</li>
+            <li>Utilized SAP Production Planning to track GMP manufacturing status, validation data, and batch disposition timelines, reducing audit preparation time by ~15%.</li>
+            <li>Maintained daily tracking reports to ensure audit readiness, data integrity, and regulatory lifecycle visibility.</li>
           </ul>
         </div>
       </div>
-
       <div class="exp-row reveal">
         <div class="exp-left">
           <div class="exp-tag">May – Jul 2021</div>
@@ -423,7 +366,6 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
           </ul>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -458,11 +400,11 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
       <div class="skill-category reveal" style="transition-delay:.2s">
         <div class="skill-cat-title">Tools &amp; Platforms</div>
         <div class="skill-tags">
-          <span class="skill-tag warm">Veeva Vault</span><span class="skill-tag warm">Atlassian Confluence</span>
-          <span class="skill-tag warm">SAP ERP (PP)</span><span class="skill-tag warm">SharePoint</span>
-          <span class="skill-tag warm">eSTAR</span><span class="skill-tag warm">RIMS</span>
-          <span class="skill-tag warm">MS Project</span><span class="skill-tag warm">Adobe Acrobat</span>
-          <span class="skill-tag warm">Microsoft Visio</span><span class="skill-tag warm">Draw.io</span>
+          <span class="skill-tag">Veeva Vault</span><span class="skill-tag">Atlassian Confluence</span>
+          <span class="skill-tag">SAP ERP (PP)</span><span class="skill-tag">SharePoint</span>
+          <span class="skill-tag">eSTAR</span><span class="skill-tag">RIMS</span>
+          <span class="skill-tag">MS Project</span><span class="skill-tag">Adobe Acrobat</span>
+          <span class="skill-tag">Microsoft Visio</span><span class="skill-tag">Draw.io</span>
         </div>
       </div>
       <div class="skill-category reveal" style="transition-delay:.3s">
@@ -485,47 +427,88 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
     <h2 class="big-title reveal">Key <span>Projects</span></h2>
     <div class="s-divider reveal"></div>
     <div class="proj-grid">
-      <div class="proj-card reveal" style="transition-delay:.0s">
+
+      <div class="proj-card reveal" style="transition-delay:.0s" onclick="openModal('p1')">
         <div class="proj-n">Project 01</div>
         <div class="proj-t">FDA 510(k) &amp; Q-Submission Simulation</div>
-        <div class="proj-d">Simulated a Class II vascular device 510(k) including predicate analysis, 21 CFR 807.92 summary, CDRH RTA checklist, and eSTAR workflow simulation. Developed a Q-Submission addressing bench testing and clinical endpoints.</div>
+        <div class="proj-d">Simulated a Class II vascular device 510(k) including predicate analysis, 21 CFR 807.92 summary, CDRH RTA checklist, and eSTAR workflow simulation.</div>
         <div class="proj-date">Apr – Jun 2025</div>
       </div>
-      <div class="proj-card reveal" style="transition-delay:.1s">
+
+      <div class="proj-card reveal" style="transition-delay:.1s" onclick="openModal('p2')">
         <div class="proj-n">Project 02</div>
         <div class="proj-t">Health Canada Class III Strategy — VascuCage™</div>
-        <div class="proj-d">Designed regulatory strategy for the VascuCage™ IVC filter justifying Class III classification per CMDR, aligned with FDA (DTK) and EU MDR rules, incorporating ISO 10993/25539 for global market access.</div>
+        <div class="proj-d">Designed regulatory strategy for the VascuCage™ IVC filter justifying Class III classification per CMDR, aligned with FDA and EU MDR rules.</div>
         <div class="proj-date">Apr – Jun 2025</div>
       </div>
-      <div class="proj-card reveal" style="transition-delay:.2s">
+
+      <div class="proj-card reveal" style="transition-delay:.2s" onclick="openModal('p3')">
         <div class="proj-n">Project 03</div>
         <div class="proj-t">US FDA-Ready CMC Package — Sterile Injectable</div>
-        <div class="proj-d">Developed a mock eCTD Module 3 CMC package including control strategy, analytical methods, and stability plans aligned with ICH Q8–Q12. Applied FMEA-based risk assessment and ALCOA+ data integrity principles.</div>
+        <div class="proj-d">Developed a mock eCTD Module 3 CMC package including control strategy, analytical methods, and stability plans aligned with ICH Q8–Q12.</div>
         <div class="proj-date">Jan – Apr 2025</div>
       </div>
-      <div class="proj-card reveal" style="transition-delay:.0s">
+
+      <div class="proj-card reveal" style="transition-delay:.0s" onclick="openModal('p4')">
         <div class="proj-n">Project 04</div>
         <div class="proj-t">SOP Development — FDA QSR / ISO 13485</div>
-        <div class="proj-d">Developed three QSR/ISO 13485-compliant SOPs for CAPA, Document Control, and Handling &amp; Distribution incorporating risk-based thinking and GMP principles for a hypothetical device launch.</div>
+        <div class="proj-d">Developed three QSR/ISO 13485-compliant SOPs for CAPA, Document Control, and Handling &amp; Distribution for a hypothetical device launch.</div>
         <div class="proj-date">Jan – Mar 2025</div>
       </div>
-      <div class="proj-card reveal" style="transition-delay:.1s">
+
+      <div class="proj-card reveal" style="transition-delay:.1s" onclick="openModal('p5')">
         <div class="proj-n">Project 05</div>
         <div class="proj-t">Class II Ophthalmic Laser — Design Control &amp; 510(k)</div>
-        <div class="proj-d">Led end-to-end design control and regulatory planning, authoring 510(k) submission documentation, risk files, and validation protocols aligned with FDA QSR, ISO 13485, and ISO 14971.</div>
+        <div class="proj-d">Led end-to-end design control and regulatory planning, authoring 510(k) submission documentation, risk files, and validation protocols.</div>
         <div class="proj-date">Jan – Mar 2025</div>
       </div>
-      <div class="proj-card reveal" style="transition-delay:.2s">
+
+      <div class="proj-card reveal" style="transition-delay:.2s" onclick="openModal('p6')">
         <div class="proj-n">Project 06</div>
         <div class="proj-t">EpiPen® Quality &amp; Compliance Optimization</div>
-        <div class="proj-d">Led quality initiative applying FMEA to mitigate high-risk failure modes, enhancing cGMP/ICH Q9–Q10 alignment with supplier audits, dual sourcing, and validated cold chain controls.</div>
+        <div class="proj-d">Led quality initiative applying FMEA to mitigate high-risk failure modes, enhancing cGMP/ICH Q9–Q10 alignment with supplier audits and cold chain controls.</div>
         <div class="proj-date">Sep – Dec 2024</div>
       </div>
+
+      <div class="proj-card reveal" style="transition-delay:.0s" onclick="openModal('p7')">
+        <div class="proj-n">Project 07</div>
+        <div class="proj-t">Regulatory Pathway Strategy — Bluetooth TENS Device</div>
+        <div class="proj-d">Evaluated the FDA regulatory pathway for a wearable TENS device integrating Bluetooth connectivity and a mobile application for therapy control.</div>
+        <div class="proj-date">2024</div>
+      </div>
+
+      <div class="proj-card reveal" style="transition-delay:.1s" onclick="openModal('p8')">
+        <div class="proj-n">Project 08</div>
+        <div class="proj-t">Quality Risk Management — FMEA Case Study</div>
+        <div class="proj-d">Applied Failure Modes and Effects Analysis to evaluate risks in a medical device component manufacturing process, identifying mitigation strategies.</div>
+        <div class="proj-date">2024</div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- EDUCATION -->
+<!-- PROJECT MODALS -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnBg(event)">
+  <div class="modal" id="modalBox">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-header">
+      <div class="modal-eyebrow" id="mEyebrow"></div>
+      <div class="modal-title" id="mTitle"></div>
+      <div class="modal-date" id="mDate"></div>
+      <div class="modal-divider"></div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section"><h4>Overview</h4><p id="mOverview"></p></div>
+      <div class="modal-section"><h4>Approach</h4><p id="mApproach"></p></div>
+      <div class="modal-section"><h4>Key Insight</h4><p id="mInsight"></p></div>
+      <div class="modal-section"><h4>Regulatory &amp; Quality Context</h4><div class="modal-tags" id="mContext"></div></div>
+      <div class="modal-section"><h4>Key Skills Demonstrated</h4><div class="modal-tags" id="mSkills"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- EDUCATION — chronological order -->
 <section id="education">
   <div class="s-inner">
     <p class="eyebrow reveal">Academic Background</p>
@@ -562,7 +545,7 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
 
 <!-- CONTACT -->
 <section id="contact">
-  <p class="eyebrow" style="color:rgba(251,252,248,.3);margin-bottom:1rem">Get in Touch</p>
+  <p class="eyebrow" style="color:#FBFCF8;margin-bottom:1rem">Get in Touch</p>
   <h2 class="contact-hl reveal">Let's Connect.</h2>
   <p class="contact-sub reveal">Actively seeking roles in Regulatory Affairs, Quality Assurance, and Manufacturing Quality across the U.S.</p>
   <div class="contact-row reveal">
@@ -585,33 +568,130 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
 <footer>© 2025 Yash Gandhi · Regulatory Affairs &amp; Quality Assurance · Clarksburg, MD</footer>
 
 <script>
-// NAV scroll
+// PROJECT DATA
+const projects={
+  p1:{
+    eyebrow:'Project 01',
+    title:'FDA 510(k) & Q-Submission Simulation',
+    date:'Apr – Jun 2025',
+    overview:'This project involved simulating a regulatory submission pathway for a Class II vascular medical device under the FDA 510(k) framework. The objective was to evaluate regulatory requirements, identify appropriate predicate devices, and prepare the key components required for a traditional 510(k) submission.',
+    approach:'A detailed predicate device analysis was conducted to identify legally marketed devices with similar intended use and technological characteristics. A structured 510(k) summary following 21 CFR 807.92 requirements was drafted. The project also included preparation of a CDRH Refuse to Accept checklist to assess submission completeness. To strengthen regulatory interaction planning, a mock Q-Submission package was developed outlining proposed bench testing strategies and clinical endpoint considerations.',
+    insight:'The exercise demonstrated how early regulatory planning and clear predicate selection can streamline the submission process and reduce the likelihood of review delays.',
+    context:['FDA 510(k) regulatory pathway','21 CFR 807.92 submission summary requirements','CDRH RTA checklist and eSTAR workflow preparation'],
+    skills:['Regulatory strategy development','Predicate device evaluation','Submission documentation planning','Regulatory pathway analysis']
+  },
+  p2:{
+    eyebrow:'Project 02',
+    title:'Health Canada Class III Strategy — VascuCage™ IVC Filter',
+    date:'Apr – Jun 2025',
+    overview:'This project focused on designing a regulatory strategy for VascuCage™, a hypothetical inferior vena cava filter intended for prevention of pulmonary embolism. The objective was to determine appropriate classification and outline regulatory submission considerations for the Canadian market.',
+    approach:'The device classification was evaluated under the Canadian Medical Devices Regulations and justified as a Class III device based on its long-term implantation and vascular interaction. The strategy incorporated global regulatory considerations including comparison with FDA product code DTK and EU MDR classification rules. Relevant standards such as ISO 10993 for biocompatibility and ISO 25539 for cardiovascular implants were reviewed to define required testing and documentation.',
+    insight:'The project demonstrated how regulatory classification drives testing requirements, documentation expectations, and overall submission strategy for global device approval.',
+    context:['Health Canada Medical Devices Regulations','FDA regulatory product classification comparisons','EU MDR regulatory alignment','ISO 10993 and ISO 25539 standards'],
+    skills:['Global regulatory strategy development','Device classification analysis','Regulatory standards evaluation','International market access planning']
+  },
+  p3:{
+    eyebrow:'Project 03',
+    title:'FDA-Ready CMC Package — Sterile Injectable Product',
+    date:'Jan – Apr 2025',
+    overview:'This project involved development of a mock Chemistry, Manufacturing, and Controls package for a sterile injectable pharmaceutical product prepared according to eCTD Module 3 requirements. The objective was to design a structured CMC documentation framework that aligns with FDA expectations and international regulatory guidelines.',
+    approach:'The CMC package included drug substance and drug product characterization, control strategy development, analytical method descriptions, and stability study planning. Risk assessment principles were applied using FMEA to evaluate potential risks across manufacturing and quality processes. Data management practices were structured around ALCOA+ principles to ensure data integrity throughout documentation.',
+    insight:'The exercise highlighted the importance of integrating quality risk management and data integrity practices within CMC documentation to support regulatory review and product lifecycle management.',
+    context:['ICH Q8 Pharmaceutical Development','ICH Q9 Quality Risk Management','ICH Q10 Pharmaceutical Quality System','ICH Q12 Lifecycle Management'],
+    skills:['CMC documentation development','Quality risk assessment','Regulatory guideline interpretation','Data integrity and compliance principles']
+  },
+  p4:{
+    eyebrow:'Project 04',
+    title:'SOP Development — FDA QSR / ISO 13485 Compliance',
+    date:'Jan – Mar 2025',
+    overview:'This project focused on developing standard operating procedures aligned with FDA Quality System Regulation and ISO 13485 quality management standards. The objective was to create foundational quality procedures that support regulatory compliance and operational consistency for a medical device organization.',
+    approach:'Three SOPs were developed covering Corrective and Preventive Actions, Document Control, and Handling and Distribution. Each procedure incorporated risk-based decision making and GMP principles. Process workflows, responsibilities, and documentation requirements were defined to support traceability and regulatory inspection readiness.',
+    insight:'The project demonstrated how clear procedural documentation strengthens quality system governance and ensures consistent compliance with regulatory requirements.',
+    context:['FDA Quality System Regulation','ISO 13485 Quality Management Systems','Good Manufacturing Practice principles'],
+    skills:['SOP development and documentation','Quality system process design','Compliance framework alignment','Inspection readiness planning']
+  },
+  p5:{
+    eyebrow:'Project 05',
+    title:'Class II Ophthalmic Laser — Design Control & 510(k) Planning',
+    date:'Jan – Mar 2025',
+    overview:'This project simulated the regulatory planning and design control process for a Class II ophthalmic laser device. The objective was to integrate product development activities with regulatory requirements to support future 510(k) submission readiness.',
+    approach:'Design control documentation was developed including design inputs, design outputs, risk management files, and verification and validation planning. A regulatory strategy was defined to support a potential 510(k) submission, including identification of relevant device classification and testing considerations. Validation protocols and risk files were aligned with established regulatory standards.',
+    insight:'The project illustrated how early integration of regulatory and quality requirements during product development strengthens submission readiness and reduces downstream compliance risks.',
+    context:['FDA QSR design control requirements','ISO 13485 product lifecycle controls','ISO 14971 medical device risk management'],
+    skills:['Design control documentation','Regulatory submission planning','Risk management integration','Product lifecycle compliance']
+  },
+  p6:{
+    eyebrow:'Project 06',
+    title:'EpiPen® Quality & Compliance Optimization Study',
+    date:'Sep – Dec 2024',
+    overview:'This project evaluated quality and compliance considerations for a complex combination product using EpiPen as a case study. The objective was to identify potential risk areas within manufacturing, supply chain, and product stability management.',
+    approach:'A structured FMEA was conducted to identify potential failure scenarios across manufacturing processes and supply chain operations. The assessment included evaluation of supplier qualification practices, cold chain logistics, and product storage requirements. Mitigation strategies were proposed including strengthened supplier audits, validated cold chain controls, and risk-based monitoring systems.',
+    insight:'The analysis demonstrated how proactive quality risk management supports product reliability, regulatory compliance, and patient safety for high-risk pharmaceutical delivery systems.',
+    context:['cGMP compliance principles','ICH Q9 quality risk management','ICH Q10 pharmaceutical quality systems'],
+    skills:['Quality risk analysis','Supply chain risk assessment','Compliance strategy evaluation','Process improvement planning']
+  },
+  p7:{
+    eyebrow:'Project 07',
+    title:'Regulatory Pathway Strategy — Bluetooth-Enabled TENS Device',
+    date:'2024',
+    overview:'This project evaluated the regulatory pathway for a wearable Transcutaneous Electrical Nerve Stimulation device that integrates Bluetooth connectivity and a mobile application for therapy control and monitoring. The objective was to determine the appropriate FDA regulatory pathway and identify submission requirements for market authorization in the United States.',
+    approach:'The analysis began with defining the device\'s intended use and technological characteristics. Potential predicate devices were identified through review of FDA device classification databases. The project examined applicable product codes and regulatory precedents for TENS devices and similar neuromodulation technologies. Consideration was given to the software component associated with Bluetooth communication, including evaluation of relevant FDA guidance for software in medical devices. A potential 510(k) regulatory strategy was outlined including anticipated performance testing, software validation considerations, and labeling requirements.',
+    insight:'The project demonstrated how early evaluation of device classification, technological characteristics, and software integration influences regulatory strategy and testing requirements for connected medical devices.',
+    context:['FDA 510(k) regulatory pathway for Class II medical devices','Medical device classification under the FD&C Act','FDA guidance on software in medical devices','Wireless and connectivity considerations for medical devices'],
+    skills:['Regulatory pathway assessment','Predicate device analysis','Regulatory strategy development','Medical device classification evaluation']
+  },
+  p8:{
+    eyebrow:'Project 08',
+    title:'Quality Risk Management — FMEA Case Study',
+    date:'2024',
+    overview:'This project focused on applying Failure Modes and Effects Analysis to evaluate potential risks associated with a medical device component and its manufacturing process. The objective was to identify possible failure scenarios, assess their impact on product performance and patient safety, and determine appropriate mitigation strategies.',
+    approach:'The analysis began by mapping key process steps and identifying potential failure modes that could occur during manufacturing, assembly, or device operation. Each failure mode was evaluated using severity, occurrence, and detectability criteria. Risk priority values were calculated to identify areas requiring immediate attention or additional controls. The assessment also considered potential process improvements, inspection controls, and design modifications to reduce overall risk.',
+    insight:'The exercise demonstrated how structured risk assessment enables organizations to prioritize quality improvements, implement preventive controls, and support compliance with regulatory expectations for medical device risk management.',
+    context:['ISO 14971 medical device risk management principles','Quality system risk-based thinking','Failure Modes and Effects Analysis methodology','Quality risk management concepts aligned with industry best practices'],
+    skills:['Risk analysis and prioritization','Failure mode identification','Quality systems thinking','Regulatory compliance awareness']
+  }
+};
+
+function openModal(id){
+  const d=projects[id];
+  document.getElementById('mEyebrow').textContent=d.eyebrow;
+  document.getElementById('mTitle').textContent=d.title;
+  document.getElementById('mDate').textContent=d.date;
+  document.getElementById('mOverview').textContent=d.overview;
+  document.getElementById('mApproach').textContent=d.approach;
+  document.getElementById('mInsight').textContent=d.insight;
+  document.getElementById('mContext').innerHTML=d.context.map(t=>`<span class="modal-tag">${t}</span>`).join('');
+  document.getElementById('mSkills').innerHTML=d.skills.map(t=>`<span class="modal-tag">${t}</span>`).join('');
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  document.getElementById('modalBox').scrollTop=0;
+}
+function closeModal(){
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function closeModalOnBg(e){if(e.target===document.getElementById('modalOverlay'))closeModal()}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+// NAV
 const nav=document.getElementById('mainNav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true});
-
-// NAV toggle
 const nt=document.getElementById('navToggle'),nl=document.getElementById('navLinks');
 nt.addEventListener('click',()=>nl.classList.toggle('open'));
 nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nl.classList.remove('open')));
 
-// WORD-BY-WORD animation
+// WORD-BY-WORD
 function initWordAnimations(){
   document.querySelectorAll('.big-title,.hero-name,.contact-hl').forEach(el=>{
     if(el.dataset.wordDone)return;
-    el.dataset.wordDone='1';
-    el.classList.add('word-wrap');
+    el.dataset.wordDone='1';el.classList.add('word-wrap');
     const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);
-    const textNodes=[];let n;
-    while(n=walker.nextNode())textNodes.push(n);
-    textNodes.forEach(tn=>{
-      const words=tn.textContent.split(/(\s+)/);
+    const nodes=[];let n;
+    while(n=walker.nextNode())nodes.push(n);
+    nodes.forEach(tn=>{
       const frag=document.createDocumentFragment();
-      words.forEach(w=>{
-        if(w.trim()){
-          const s=document.createElement('span');
-          s.className='word';s.textContent=w;
-          frag.appendChild(s);frag.appendChild(document.createTextNode(' '));
-        }
+      tn.textContent.split(/(\s+)/).forEach(w=>{
+        if(w.trim()){const s=document.createElement('span');s.className='word';s.textContent=w;frag.appendChild(s);frag.appendChild(document.createTextNode(' '));}
       });
       tn.replaceWith(frag);
     });
@@ -620,50 +700,38 @@ function initWordAnimations(){
 initWordAnimations();
 
 // COUNT-UP
-function countUp(el,target,suffix,duration){
-  let startTime=null;
-  function step(ts){
-    if(!startTime)startTime=ts;
-    const progress=Math.min((ts-startTime)/duration,1);
-    const ease=1-Math.pow(1-progress,4);
-    el.textContent=Math.floor(target*ease)+suffix;
-    if(progress<1)requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
+function countUp(el,target,suffix,dur){
+  let start=null;
+  (function step(ts){
+    if(!start)start=ts;
+    const p=Math.min((ts-start)/dur,1),e=1-Math.pow(1-p,4);
+    el.textContent=Math.floor(target*e)+suffix;
+    if(p<1)requestAnimationFrame(step);
+  })(performance.now());
 }
 
 // SCROLL REVEAL
-const revealObs=new IntersectionObserver((entries)=>{
+const io=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
-    if(e.isIntersecting){
-      const el=e.target;
-      el.classList.add('visible');
-      if(el.classList.contains('word-wrap')){
-        el.querySelectorAll('.word').forEach((w,i)=>{
-          setTimeout(()=>{w.style.opacity='1';w.style.transform='translateY(0) rotate(0deg)'},i*42);
-        });
-      }
-      if(el.classList.contains('stat-wrapper')){
-        el.querySelectorAll('[data-count]').forEach(num=>{
-          countUp(num,parseFloat(num.dataset.count),num.dataset.suffix||'',1400);
-        });
-      }
-      revealObs.unobserve(el);
-    }
+    if(!e.isIntersecting)return;
+    const el=e.target;
+    el.classList.add('visible');
+    if(el.classList.contains('word-wrap'))
+      el.querySelectorAll('.word').forEach((w,i)=>setTimeout(()=>{w.style.opacity='1';w.style.transform='none'},i*42));
+    if(el.classList.contains('stat-wrapper'))
+      el.querySelectorAll('[data-count]').forEach(n=>countUp(n,+n.dataset.count,n.dataset.suffix||'',1400));
+    io.unobserve(el);
   });
-},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.word-wrap').forEach(el=>io.observe(el));
+document.querySelectorAll('.stats-inner').forEach(el=>{el.classList.add('stat-wrapper');io.observe(el)});
 
-document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.word-wrap').forEach(el=>revealObs.observe(el));
-document.querySelectorAll('.stats-inner').forEach(el=>{el.classList.add('stat-wrapper');revealObs.observe(el)});
-
-// PARALLAX on hero photo
+// PARALLAX
 const hw=document.querySelector('.hero-photo-wrap');
-window.addEventListener('scroll',()=>{
-  if(hw)hw.style.transform=`translateY(${window.scrollY*.08}px)`;
-},{passive:true});
+window.addEventListener('scroll',()=>{if(hw)hw.style.transform=`translateY(${window.scrollY*.08}px)`},{passive:true});
 
 // MAGNETIC BUTTONS
-document.querySelectorAll('.btn-dark,.btn-light').forEach(btn=>{
+document.querySelectorAll('.btn-dark,.btn-light,.btn-resume').forEach(btn=>{
   btn.addEventListener('mousemove',e=>{
     const r=btn.getBoundingClientRect();
     btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.35}px,${(e.clientY-r.top-r.height/2)*.35}px) scale(1.04)`;
