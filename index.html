@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Yash Gandhi | Regulatory Affairs & Quality Assurance</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#FBFCF8;
+  --bg2:#f3f4ef;
+  --navy:#231B18;
+  --text:#231B18;
+  --muted:#3d3530;
+  --soft:#6b5f58;
+  --card:#ffffff;
+  --border:#e2ddd8;
+  --cream:#FBFCF8;
+  --shadow:0 4px 24px rgba(35,27,24,0.07);
+  --shadow-lg:0 16px 48px rgba(35,27,24,0.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{
+  position:fixed;top:0;width:100%;z-index:200;
+  padding:0 3rem;height:54px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:#231B18;
+  border-bottom:1px solid rgba(251,252,248,.07);
+  transition:box-shadow .4s;
+}
+nav.scrolled{box-shadow:0 4px 30px rgba(35,27,24,.35)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#FBFCF8;letter-spacing:-.01em}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(251,252,248,.65);font-size:.78rem;letter-spacing:.06em;text-decoration:none;text-transform:uppercase;font-weight:600;transition:color .2s}
+.nav-links a:hover{color:#FBFCF8}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
+.nav-toggle span{width:22px;height:1.5px;background:#FBFCF8;display:block}
+
+/* HERO */
+#hero{
+  min-height:100vh;background:var(--bg);
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;
+  padding:9rem 2rem 5rem;overflow:hidden;position:relative;
+}
+.hero-eyebrow{
+  font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--soft);margin-bottom:1.4rem;
+  opacity:0;animation:fadeUp .9s .1s cubic-bezier(.16,1,.3,1) forwards;
+}
+.hero-name{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3.5rem,8vw,6.5rem);font-weight:800;
+  letter-spacing:-.04em;line-height:1.04;color:#231B18;
+  margin-bottom:1.2rem;
+  opacity:0;animation:fadeUp .9s .25s cubic-bezier(.16,1,.3,1) forwards;
+}
+.hero-tagline{
+  font-size:clamp(1rem,2vw,1.25rem);font-weight:300;color:var(--muted);
+  max-width:600px;line-height:1.7;margin:0 auto 1rem;
+  opacity:0;animation:fadeUp .9s .4s cubic-bezier(.16,1,.3,1) forwards;
+}
+.hero-sub{
+  font-size:.88rem;color:var(--soft);font-weight:500;margin-bottom:2.8rem;
+  opacity:0;animation:fadeUp .9s .52s cubic-bezier(.16,1,.3,1) forwards;
+}
+.hero-btns{
+  display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;
+  margin-bottom:5rem;
+  opacity:0;animation:fadeUp .9s .64s cubic-bezier(.16,1,.3,1) forwards;
+}
+.btn-dark{
+  padding:.85rem 2.2rem;border-radius:50px;background:#231B18;color:#FBFCF8;
+  font-size:.88rem;font-weight:600;text-decoration:none;transition:.2s;
+  box-shadow:0 4px 18px rgba(35,27,24,.22);
+}
+.btn-dark:hover{background:#3d302b;transform:scale(1.02)}
+.btn-light{
+  padding:.85rem 2.2rem;border-radius:50px;
+  background:rgba(35,27,24,.07);color:#231B18;
+  font-size:.88rem;font-weight:600;text-decoration:none;transition:.2s;border:1px solid var(--border);
+}
+.btn-light:hover{background:rgba(35,27,24,.12)}
+
+/* HERO PHOTO ROW */
+.hero-photos{
+  display:flex;gap:1.5rem;justify-content:center;align-items:flex-end;
+  width:100%;max-width:900px;
+  opacity:0;animation:fadeUp 1s .78s cubic-bezier(.16,1,.3,1) forwards;
+}
+.hp-main{
+  width:280px;height:360px;border-radius:20px;overflow:hidden;
+  box-shadow:var(--shadow-lg);border:3px solid #fff;flex-shrink:0;
+}
+.hp-main img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;filter:brightness(1.02) contrast(1.03)}
+.hp-side{
+  width:200px;height:260px;border-radius:16px;overflow:hidden;
+  box-shadow:var(--shadow);border:3px solid #fff;flex-shrink:0;
+}
+.hp-side img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.hp-side:first-of-type{transform:translateY(30px)}
+.hp-side:last-of-type{transform:translateY(20px)}
+
+/* SECTION SHARED */
+.s-inner{max-width:1080px;margin:0 auto;padding:7rem 2.5rem}
+.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:.7rem}
+.big-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;
+  letter-spacing:-.03em;line-height:1.12;color:#231B18;margin-bottom:1.5rem;
+}
+.big-title span{color:#231B18;border-bottom:3px solid rgba(35,27,24,.25);padding-bottom:3px}
+.s-divider{width:48px;height:3px;background:linear-gradient(90deg,#231B18,rgba(35,27,24,.2));border-radius:3px;margin-bottom:2.8rem}
+
+/* ABOUT */
+#about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-photos{position:relative;height:520px}
+.ap-main{
+  position:absolute;left:0;top:0;
+  width:68%;height:440px;border-radius:20px;overflow:hidden;
+  box-shadow:var(--shadow-lg);border:3px solid #fff;
+}
+.ap-main img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;filter:brightness(1.03) saturate(1.05)}
+.ap-over{
+  position:absolute;right:0;bottom:0;
+  width:55%;height:300px;border-radius:16px;overflow:hidden;
+  box-shadow:var(--shadow-lg);border:3px solid #fff;
+}
+.ap-over img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;filter:grayscale(15%) contrast(1.04)}
+.about-text .eyebrow{text-align:left}
+.about-text p{font-size:.94rem;color:var(--muted);line-height:1.9;margin-bottom:1rem;font-weight:300}
+.about-pills{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.5rem}
+.apill{font-size:.74rem;font-weight:600;padding:.3rem .9rem;border-radius:50px;background:rgba(35,27,24,.06);border:1px solid var(--border);color:#231B18}
+.apill.dark{background:#231B18;border-color:#231B18;color:#FBFCF8}
+
+/* STATS */
+.stats-strip{background:#231B18;padding:4rem 2rem}
+.stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+.stat-n{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:800;color:#FBFCF8;line-height:1}
+.stat-l{font-size:.72rem;color:rgba(251,252,248,.4);margin-top:.4rem;font-weight:500;letter-spacing:.05em}
+
+/* EXPERIENCE */
+#experience{background:var(--bg)}
+.exp-list{display:flex;flex-direction:column;gap:0}
+.exp-row{
+  display:grid;grid-template-columns:180px 1fr;gap:3rem;
+  padding:2.5rem 0;border-top:1px solid var(--border);
+}
+.exp-left{padding-top:.1rem}
+.exp-tag{font-size:.7rem;font-weight:700;color:#FBFCF8;background:#231B18;border-radius:50px;padding:.22rem .75rem;display:inline-block;margin-bottom:.5rem;white-space:nowrap}
+.exp-co{font-size:.76rem;color:var(--soft);line-height:1.5}
+.exp-role{font-size:1rem;font-weight:700;color:#231B18;margin-bottom:.25rem;letter-spacing:-.01em}
+.exp-place{font-size:.78rem;color:var(--soft);margin-bottom:.8rem}
+.exp-ul{list-style:none;padding:0}
+.exp-ul li{font-size:.85rem;color:var(--muted);line-height:1.78;padding-left:1.1rem;position:relative;margin-bottom:.3rem}
+.exp-ul li::before{content:'';position:absolute;left:0;top:.68em;width:5px;height:5px;border-radius:50%;background:#231B18}
+
+/* SKILLS */
+#skills{background:var(--bg2)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.3rem;margin-top:3.5rem}
+.skill-category{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:18px;padding:1.8rem;
+  box-shadow:var(--shadow);
+  transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s,border-color .35s;
+  border-top:3px solid #231B18;
+}
+.skill-category:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.skill-cat-title{font-family:'Playfair Display',serif;font-weight:700;margin-bottom:1.1rem;color:#231B18;font-size:1rem}
+.skill-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.skill-tag{
+  padding:.28rem .8rem;border-radius:50px;font-size:.73rem;font-weight:600;
+  background:rgba(35,27,24,.06);border:1px solid rgba(35,27,24,.12);color:#231B18;
+  transition:background .2s,color .2s;
+}
+.skill-tag:hover{background:#231B18;color:#FBFCF8}
+.skill-tag.warm{background:#231B18;border-color:#231B18;color:#FBFCF8}
+.skill-tag.warm:hover{background:#3d302b}
+
+/* PROJECTS */
+#projects{background:var(--bg)}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3.5rem}
+.proj-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:16px;padding:2rem;
+  transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s,border-color .35s;
+}
+.proj-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:rgba(35,27,24,.3)}
+.proj-n{font-size:.68rem;font-weight:700;color:var(--soft);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.7rem}
+.proj-t{font-size:.96rem;font-weight:700;color:#231B18;line-height:1.35;margin-bottom:.5rem}
+.proj-d{font-size:.81rem;color:var(--muted);line-height:1.75;font-weight:300}
+.proj-date{font-size:.7rem;color:var(--soft);margin-top:.9rem;font-weight:500}
+
+/* EDUCATION */
+#education{background:var(--bg2)}
+.edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:3.5rem}
+.edu-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:16px;padding:2rem;
+  position:relative;overflow:hidden;
+  transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s;
+}
+.edu-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#231B18}
+.edu-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.edu-deg{font-size:.97rem;font-weight:700;color:#231B18;margin-bottom:.25rem}
+.edu-sch{font-size:.8rem;color:var(--soft);font-weight:600;margin-bottom:.3rem}
+.edu-yr{font-size:.73rem;color:var(--muted);margin-bottom:.8rem}
+.edu-desc{font-size:.8rem;color:var(--muted);line-height:1.75;font-weight:300}
+.edu-img{width:100%;border-radius:10px;margin-top:1.1rem;height:160px;object-fit:cover;object-position:center;display:block;filter:brightness(1.02)}
+
+/* CONTACT */
+#contact{background:#231B18;padding:7rem 2rem;text-align:center}
+.contact-hl{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:800;letter-spacing:-.04em;color:#FBFCF8;margin-bottom:1rem;line-height:1.05}
+.contact-sub{font-size:1rem;font-weight:300;color:rgba(251,252,248,.45);margin-bottom:3rem;max-width:480px;margin-left:auto;margin-right:auto}
+.contact-row{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.clink{
+  display:flex;align-items:center;gap:.6rem;
+  background:rgba(251,252,248,.08);border:1px solid rgba(251,252,248,.12);
+  border-radius:50px;padding:.75rem 1.5rem;
+  color:#FBFCF8;text-decoration:none;font-size:.83rem;font-weight:500;transition:.2s;
+}
+.clink:hover{background:rgba(251,252,248,.16);transform:translateY(-2px)}
+.clink svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
+.clink.primary{background:#FBFCF8;color:#231B18;border-color:#FBFCF8;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif}
+.clink.primary:hover{background:#ede8e4;border-color:#ede8e4}
+
+footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8rem;text-align:center;font-size:.73rem;color:rgba(251,252,248,.2)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* scroll-reveal base states */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-50px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(50px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-scale{opacity:0;transform:scale(.94);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+
+/* word-by-word animation */
+.word-wrap .word{
+  display:inline-block;opacity:0;
+  transform:translateY(28px) rotate(.4deg);
+  transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1);
+}
+.word-wrap.visible .word{opacity:1;transform:translateY(0) rotate(0deg)}
+
+/* count-up numbers */
+.stat-n{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:800;color:#FBFCF8;line-height:1}
+
+/* exp row hover */
+.exp-row{
+  display:grid;grid-template-columns:180px 1fr;gap:3rem;
+  padding:2.5rem 0;border-top:1px solid var(--border);
+  transition:background .3s;border-radius:0;
+}
+.exp-row:hover{background:rgba(35,27,24,.03);padding-left:1rem;padding-right:1rem;border-radius:14px;margin:0 -1rem}
+
+/* skill tag interactive */
+.skill-tag{
+  padding:.28rem .8rem;border-radius:50px;font-size:.73rem;font-weight:600;
+  background:rgba(35,27,24,.06);border:1px solid rgba(35,27,24,.12);color:#231B18;
+  transition:background .22s,color .22s,transform .22s,box-shadow .22s;
+  cursor:default;
+}
+.skill-tag:hover{background:#231B18;color:#FBFCF8;transform:translateY(-2px) scale(1.04);box-shadow:0 4px 12px rgba(35,27,24,.18)}
+.skill-tag.warm{background:#231B18;border-color:#231B18;color:#FBFCF8}
+.skill-tag.warm:hover{background:#3d302b;transform:translateY(-2px) scale(1.04)}
+
+/* proj card tilt on hover */
+.proj-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:16px;padding:2rem;
+  transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s,border-color .4s;
+  transform-style:preserve-3d;
+}
+.proj-card:hover{transform:translateY(-6px) rotateX(2deg);box-shadow:0 20px 50px rgba(35,27,24,.14);border-color:rgba(35,27,24,.3)}
+
+/* edu card */
+.edu-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:16px;padding:2rem;
+  position:relative;overflow:hidden;
+  transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s;
+}
+.edu-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#231B18}
+.edu-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(35,27,24,.12)}
+
+/* hero photo hover */
+.hp-main,.hp-side{transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s}
+.hp-main:hover{transform:scale(1.03)!important;box-shadow:0 24px 60px rgba(35,27,24,.2)}
+.hp-side:hover{transform:translateY(20px) scale(1.04)!important;box-shadow:0 20px 50px rgba(35,27,24,.16)}
+
+/* about photo hover */
+.ap-main,.ap-over{transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s}
+.ap-main:hover{transform:scale(1.02);box-shadow:0 24px 60px rgba(35,27,24,.18)}
+.ap-over:hover{transform:scale(1.04) translate(-4px,-4px);box-shadow:0 20px 50px rgba(35,27,24,.16)}
+
+/* MOBILE */
+@media(max-width:900px){
+  .about-grid{grid-template-columns:1fr}
+  .about-photos{height:340px}
+  .ap-main{width:62%;height:280px}
+  .ap-over{width:52%;height:200px}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .sk-grid{grid-template-columns:1fr 1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .edu-grid{grid-template-columns:1fr}
+  .hero-photos{gap:1rem}
+  .hp-main{width:200px;height:260px}
+  .hp-side{width:140px;height:190px}
+  nav{padding:0 1.5rem}
+  .s-inner{padding:5rem 1.5rem}
+}
+@media(max-width:640px){
+  .nav-links{display:none;flex-direction:column;position:fixed;top:54px;left:0;right:0;background:#231B18;padding:2rem;gap:1.5rem;border-bottom:1px solid rgba(251,252,248,.08)}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:flex}
+  .exp-row{grid-template-columns:1fr}
+  .sk-grid{grid-template-columns:1fr}
+  .hero-photos{flex-direction:column;align-items:center}
+  .hp-side{transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-logo">Yash Gandhi</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <p class="hero-eyebrow">Regulatory Affairs &amp; Quality Assurance</p>
+  <h1 class="hero-name">Yash Gandhi</h1>
+  <p class="hero-tagline">MS Regulatory Affairs · Northeastern University<br/>MedTech · Pharma · Biologics</p>
+  <p class="hero-sub">FDA · EU MDR · ISO 13485 · 21 CFR 820 · cGMP · Veeva Vault</p>
+  <div class="hero-btns">
+    <a href="#contact" class="btn-dark">Get in Touch</a>
+    <a href="#experience" class="btn-light">View Experience</a>
+  </div>
+  <!-- THREE PHOTOS IN A ROW -->
+  <div class="hero-photos" id="heroPhotos">
+    <div class="hp-side">
+      <img src="photo4.jpg" alt="Yash Gandhi Graduation" onerror="this.parentNode.style.background='#e8e4df'"/>
+    </div>
+    <div class="hp-main">
+      <img src="photo1.jpg" alt="Yash Gandhi" onerror="this.parentNode.style.background='#e8e4df'"/>
+    </div>
+    <div class="hp-side">
+      <img src="photo3.jpg" alt="Yash Gandhi at Northeastern" onerror="this.parentNode.style.background='#e8e4df'"/>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="s-inner">
+    <div class="about-grid">
+      <div class="about-photos reveal-left">
+        <div class="ap-main">
+          <img src="photo2.jpg" alt="Yash Gandhi Northeastern wide" onerror="this.parentNode.style.background='#ddd'"/>
+        </div>
+        <div class="ap-over">
+          <img src="photo4.jpg" alt="Yash Gandhi Graduation" onerror="this.parentNode.style.background='#ddd'"/>
+        </div>
+      </div>
+      <div class="about-text reveal-right">
+        <p class="eyebrow">About</p>
+        <h2 class="big-title">Where compliance,<br/>quality &amp; <span>execution</span> meet.</h2>
+        <div class="s-divider"></div>
+        <p>I operate at the intersection of regulatory strategy, quality assurance, and operational execution — taking full ownership of moving all three forward across MedTech, Pharma, and Biologics environments.</p>
+        <p>At <strong style="color:#231B18;font-weight:700">Becton, Dickinson and Company</strong>, I led the migration of global regulatory repositories, authored SOPs, and supported 510(k), EU MDR, and Q-Submission documentation. My foundation at <strong style="color:#231B18;font-weight:700">Alembic Pharmaceuticals</strong> gave me hands-on GMP experience in sterile injectable manufacturing.</p>
+        <p>Currently volunteering at <strong style="color:#231B18;font-weight:700">Project Insulin</strong>, contributing to biosimilar insulin regulatory strategy including pre-BLA preparation and early CMC documentation frameworks.</p>
+        <div class="about-pills">
+          <span class="apill dark">Open to Opportunities</span>
+          <span class="apill dark">F-1 OPT / STEM</span>
+          <span class="apill">Clarksburg, MD</span>
+          <span class="apill">RAPS Member 2025</span>
+          <span class="apill">MS Reg. Affairs · NEU</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="reveal"><div class="stat-n" data-count="3" data-suffix="+">3+</div><div class="stat-l">Years Experience</div></div>
+    <div class="reveal" style="transition-delay:.1s"><div class="stat-n" data-count="6" data-suffix="">6</div><div class="stat-l">Key Projects</div></div>
+    <div class="reveal" style="transition-delay:.2s"><div class="stat-n" data-count="5" data-suffix="">5</div><div class="stat-l">Roles &amp; Positions</div></div>
+    <div class="reveal" style="transition-delay:.3s"><div class="stat-n" data-count="30" data-suffix="%">30%</div><div class="stat-l">Review Cycle Reduction · BD</div></div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="s-inner">
+    <p class="eyebrow reveal">Work History</p>
+    <h2 class="big-title reveal">Professional <span>Experience</span></h2>
+    <div class="s-divider reveal"></div>
+    <div class="exp-list">
+
+      <div class="exp-row reveal">
+        <div class="exp-left">
+          <div class="exp-tag">Dec 2025 – Now</div>
+          <div class="exp-co">Project Insulin<br/>Cambridge, MA</div>
+        </div>
+        <div>
+          <div class="exp-role">Regulatory Affairs Project Analyst (Volunteer)</div>
+          <div class="exp-place">Biosimilars · Pre-IND Regulatory Support</div>
+          <ul class="exp-ul">
+            <li>Leading early-stage regulatory planning for a biosimilar insulin initiative, developing CMC documentation frameworks and traceability controls.</li>
+            <li>Contributing to FDA INTERACT and pre-BLA meeting briefing materials to enable early regulatory engagement.</li>
+            <li>Conducting regulatory gap assessments against reference product data and drafting quality documentation to support cGMP readiness.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-row reveal">
+        <div class="exp-left">
+          <div class="exp-tag">Jan – Jun 2025</div>
+          <div class="exp-co">Becton, Dickinson<br/>&amp; Company<br/>San Diego, CA</div>
+        </div>
+        <div>
+          <div class="exp-role">Regulatory Affairs Specialist II</div>
+          <div class="exp-place">Medical Device · Class II · FDA &amp; EU MDR</div>
+          <ul class="exp-ul">
+            <li>Prepared V&amp;V summaries supporting FDA 510(k) and EU MDR Class II submissions aligned with ISO 14971 risk management.</li>
+            <li>Reviewed device labeling, Instructions for Use, UDI records, and regulatory statements for compliance prior to submission.</li>
+            <li>Led migration of global regulatory repositories from Confluence Server to Cloud, reducing review cycle time by ~30%.</li>
+            <li>Assessed regulatory impact of design and manufacturing changes through change-control evaluations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-row reveal">
+        <div class="exp-left">
+          <div class="exp-tag">Oct – Dec 2024</div>
+          <div class="exp-co">RegDesk Inc.<br/>Boston, MA</div>
+        </div>
+        <div>
+          <div class="exp-role">Regulatory Affairs Intern</div>
+          <div class="exp-place">EU MDR · Cybersecurity Compliance</div>
+          <ul class="exp-ul">
+            <li>Conducted regulatory intelligence on EU MDR Annex I and MDCG 2019-16, developing cybersecurity compliance briefs for CE Mark submissions.</li>
+            <li>Monitored MDR updates and maintained an internal compliance tracker to streamline documentation planning.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-row reveal">
+        <div class="exp-left">
+          <div class="exp-tag">Feb – Aug 2023</div>
+          <div class="exp-co">Alembic Pharma<br/>Vadodara, India</div>
+        </div>
+        <div>
+          <div class="exp-role">Supply Chain Management Analyst (PPC)</div>
+          <div class="exp-place">Sterile Injectables · cGMP · ANDA</div>
+          <ul class="exp-ul">
+            <li>Executed production planning and batch scheduling for sterile injectable manufacturing using SAP Production Planning.</li>
+            <li>Reviewed Batch Manufacturing Records in a 21 CFR Part 211 cGMP environment for completeness and GDP adherence.</li>
+            <li>Collaborated with Regulatory CMC teams to compile ANDA Module 3 documentation and post-approval change control activities.</li>
+            <li>Initiated and tracked manufacturing deviations in SAP/QMS, coordinating CAPA follow-up activities.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-row reveal">
+        <div class="exp-left">
+          <div class="exp-tag">May – Jul 2021</div>
+          <div class="exp-co">Suyaash Pharma<br/>Bilimora, India</div>
+        </div>
+        <div>
+          <div class="exp-role">QA Analyst Intern</div>
+          <div class="exp-place">Ophthalmic Manufacturing · GMP · GDP</div>
+          <ul class="exp-ul">
+            <li>Reviewed GMP batch records for ophthalmic formulations to ensure audit readiness and GDP compliance.</li>
+            <li>Assisted in drafting and updating SOPs, coordinating documentation flow between production and quality teams.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="s-inner">
+    <p class="eyebrow reveal">Core Competencies</p>
+    <h2 class="big-title reveal">Skills &amp; <span>Expertise</span></h2>
+    <div class="s-divider reveal"></div>
+    <div class="skills-grid">
+      <div class="skill-category reveal" style="transition-delay:.0s">
+        <div class="skill-cat-title">Regulatory Affairs</div>
+        <div class="skill-tags">
+          <span class="skill-tag">FDA 510(k)</span><span class="skill-tag">EU MDR</span>
+          <span class="skill-tag">ANDA / CMC</span><span class="skill-tag">eCTD Structure</span>
+          <span class="skill-tag">Q-Submission</span><span class="skill-tag">Pre-BLA / INTERACT</span>
+          <span class="skill-tag">Health Canada Class III</span><span class="skill-tag">ISO 14971</span>
+          <span class="skill-tag">Regulatory Writing</span><span class="skill-tag">Submission Lifecycle</span>
+        </div>
+      </div>
+      <div class="skill-category reveal" style="transition-delay:.1s">
+        <div class="skill-cat-title">Quality Systems</div>
+        <div class="skill-tags">
+          <span class="skill-tag">ISO 13485</span><span class="skill-tag">FDA QSR 21 CFR 820</span>
+          <span class="skill-tag">cGMP 21 CFR 211</span><span class="skill-tag">CAPA Management</span>
+          <span class="skill-tag">Change Control</span><span class="skill-tag">ALCOA+ Data Integrity</span>
+          <span class="skill-tag">SOP Development</span><span class="skill-tag">GxP Compliance</span>
+          <span class="skill-tag">Root Cause Analysis</span><span class="skill-tag">Audit Readiness</span>
+        </div>
+      </div>
+      <div class="skill-category reveal" style="transition-delay:.2s">
+        <div class="skill-cat-title">Tools &amp; Platforms</div>
+        <div class="skill-tags">
+          <span class="skill-tag warm">Veeva Vault</span><span class="skill-tag warm">Atlassian Confluence</span>
+          <span class="skill-tag warm">SAP ERP (PP)</span><span class="skill-tag warm">SharePoint</span>
+          <span class="skill-tag warm">eSTAR</span><span class="skill-tag warm">RIMS</span>
+          <span class="skill-tag warm">MS Project</span><span class="skill-tag warm">Adobe Acrobat</span>
+          <span class="skill-tag warm">Microsoft Visio</span><span class="skill-tag warm">Draw.io</span>
+        </div>
+      </div>
+      <div class="skill-category reveal" style="transition-delay:.3s">
+        <div class="skill-cat-title">Domain Expertise</div>
+        <div class="skill-tags">
+          <span class="skill-tag">MedTech</span><span class="skill-tag">Pharmaceuticals</span>
+          <span class="skill-tag">Biologics / Biosimilars</span><span class="skill-tag">Sterile Injectables</span>
+          <span class="skill-tag">Design Controls</span><span class="skill-tag">Labeling &amp; UDI</span>
+          <span class="skill-tag">Deviation Management</span><span class="skill-tag">Cross-Functional Leadership</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="s-inner">
+    <p class="eyebrow reveal">Selected Work</p>
+    <h2 class="big-title reveal">Key <span>Projects</span></h2>
+    <div class="s-divider reveal"></div>
+    <div class="proj-grid">
+      <div class="proj-card reveal" style="transition-delay:.0s">
+        <div class="proj-n">Project 01</div>
+        <div class="proj-t">FDA 510(k) &amp; Q-Submission Simulation</div>
+        <div class="proj-d">Simulated a Class II vascular device 510(k) including predicate analysis, 21 CFR 807.92 summary, CDRH RTA checklist, and eSTAR workflow simulation. Developed a Q-Submission addressing bench testing and clinical endpoints.</div>
+        <div class="proj-date">Apr – Jun 2025</div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.1s">
+        <div class="proj-n">Project 02</div>
+        <div class="proj-t">Health Canada Class III Strategy — VascuCage™</div>
+        <div class="proj-d">Designed regulatory strategy for the VascuCage™ IVC filter justifying Class III classification per CMDR, aligned with FDA (DTK) and EU MDR rules, incorporating ISO 10993/25539 for global market access.</div>
+        <div class="proj-date">Apr – Jun 2025</div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.2s">
+        <div class="proj-n">Project 03</div>
+        <div class="proj-t">US FDA-Ready CMC Package — Sterile Injectable</div>
+        <div class="proj-d">Developed a mock eCTD Module 3 CMC package including control strategy, analytical methods, and stability plans aligned with ICH Q8–Q12. Applied FMEA-based risk assessment and ALCOA+ data integrity principles.</div>
+        <div class="proj-date">Jan – Apr 2025</div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.0s">
+        <div class="proj-n">Project 04</div>
+        <div class="proj-t">SOP Development — FDA QSR / ISO 13485</div>
+        <div class="proj-d">Developed three QSR/ISO 13485-compliant SOPs for CAPA, Document Control, and Handling &amp; Distribution incorporating risk-based thinking and GMP principles for a hypothetical device launch.</div>
+        <div class="proj-date">Jan – Mar 2025</div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.1s">
+        <div class="proj-n">Project 05</div>
+        <div class="proj-t">Class II Ophthalmic Laser — Design Control &amp; 510(k)</div>
+        <div class="proj-d">Led end-to-end design control and regulatory planning, authoring 510(k) submission documentation, risk files, and validation protocols aligned with FDA QSR, ISO 13485, and ISO 14971.</div>
+        <div class="proj-date">Jan – Mar 2025</div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.2s">
+        <div class="proj-n">Project 06</div>
+        <div class="proj-t">EpiPen® Quality &amp; Compliance Optimization</div>
+        <div class="proj-d">Led quality initiative applying FMEA to mitigate high-risk failure modes, enhancing cGMP/ICH Q9–Q10 alignment with supplier audits, dual sourcing, and validated cold chain controls.</div>
+        <div class="proj-date">Sep – Dec 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="s-inner">
+    <p class="eyebrow reveal">Academic Background</p>
+    <h2 class="big-title reveal">Education &amp; <span>Certifications</span></h2>
+    <div class="s-divider reveal"></div>
+    <div class="edu-grid">
+      <div class="edu-card reveal" style="transition-delay:.0s">
+        <div class="edu-deg">Master of Science — Regulatory Affairs</div>
+        <div class="edu-sch">Northeastern University · Boston, MA</div>
+        <div class="edu-yr">Sep 2023 – Jun 2025</div>
+        <div class="edu-desc">FDA submissions, EU MDR, Quality Systems, CMC documentation, Global Regulatory Strategy</div>
+
+      </div>
+      <div class="edu-card reveal" style="transition-delay:.12s">
+        <div class="edu-deg">Bachelor of Pharmacy</div>
+        <div class="edu-sch">Dharmsinh Desai University · Nadiad, India</div>
+        <div class="edu-yr">2018 – 2022</div>
+        <div class="edu-desc">Pharmaceutical sciences, drug development, GMP manufacturing, and quality systems</div>
+      </div>
+      <div class="edu-card reveal" style="transition-delay:.24s">
+        <div class="edu-deg">RAPS Member</div>
+        <div class="edu-sch">Regulatory Affairs Professionals Society</div>
+        <div class="edu-yr">2025 – Present</div>
+        <div class="edu-desc">Active member of the leading global regulatory affairs professional organization</div>
+      </div>
+      <div class="edu-card reveal" style="transition-delay:.36s">
+        <div class="edu-deg">Professional Certifications</div>
+        <div class="edu-sch">Coursera / Continuing Education</div>
+        <div class="edu-yr">Ongoing</div>
+        <div class="edu-desc">Manufacturing &amp; Product Quality · Drug Development · Project Management: Healthcare · Registered Pharmacist</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="eyebrow" style="color:rgba(251,252,248,.3);margin-bottom:1rem">Get in Touch</p>
+  <h2 class="contact-hl reveal">Let's Connect.</h2>
+  <p class="contact-sub reveal">Actively seeking roles in Regulatory Affairs, Quality Assurance, and Manufacturing Quality across the U.S.</p>
+  <div class="contact-row reveal">
+    <a href="mailto:ygandhi.corpdesk@outlook.com" class="clink" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+      ygandhi.corpdesk@outlook.com
+    </a>
+    <button class="clink primary" onclick="navigator.clipboard.writeText('ygandhi.corpdesk@outlook.com').then(()=>{this.textContent='✓ Copied!';setTimeout(()=>this.textContent='Copy Email',2000)})">Copy Email</button>
+    <a href="https://www.linkedin.com/in/yash-gandhi26/" target="_blank" class="clink">
+      <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="tel:+12409780794" class="clink">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.27-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      +1 (240) 978-0794
+    </a>
+  </div>
+</section>
+
+<footer>© 2025 Yash Gandhi · Regulatory Affairs &amp; Quality Assurance · Clarksburg, MD</footer>
+
+<script>
+// NAV scroll effect
+const nav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>60);
+},{passive:true});
+
+// NAV toggle
+const nt=document.getElementById('navToggle'),nl=document.getElementById('navLinks');
+nt.addEventListener('click',()=>nl.classList.toggle('open'));
+nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nl.classList.remove('open')));
+
+// WORD-BY-WORD ANIMATION for big titles
+function initWordAnimations(){
+  document.querySelectorAll('.big-title,.hero-name,.contact-hl').forEach(el=>{
+    if(el.dataset.wordDone)return;
+    el.dataset.wordDone='1';
+    el.classList.add('word-wrap');
+    // preserve inner HTML structure (spans etc)
+    const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);
+    const textNodes=[];
+    let n;
+    while(n=walker.nextNode())textNodes.push(n);
+    textNodes.forEach(tn=>{
+      const words=tn.textContent.split(/(\s+)/);
+      const frag=document.createDocumentFragment();
+      words.forEach(w=>{
+        if(w.trim()){
+          const s=document.createElement('span');
+          s.className='word';s.textContent=w;
+          frag.appendChild(s);
+          frag.appendChild(document.createTextNode(' '));
+        }
+      });
+      tn.replaceWith(frag);
+    });
+  });
+}
+initWordAnimations();
+
+// COUNT-UP ANIMATION for stats
+function countUp(el,target,suffix,duration){
+  const isFloat=target%1!==0;
+  let start=0,startTime=null;
+  function step(ts){
+    if(!startTime)startTime=ts;
+    const progress=Math.min((ts-startTime)/duration,1);
+    const ease=1-Math.pow(1-progress,4);
+    const val=isFloat?(start+(target-start)*ease).toFixed(1)
+                     :Math.floor(start+(target-start)*ease);
+    el.textContent=val+suffix;
+    if(progress<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// APPLE-STYLE SCROLL REVEAL with word triggers
+const revealObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const el=e.target;
+      el.classList.add('visible');
+      // trigger word animations on word-wrap elements
+      if(el.classList.contains('word-wrap')){
+        el.querySelectorAll('.word').forEach((w,i)=>{
+          setTimeout(()=>{w.style.opacity='1';w.style.transform='translateY(0) rotate(0deg)'},i*42);
+        });
+      }
+      // count-up for stat numbers
+      if(el.classList.contains('stat-wrapper')){
+        el.querySelectorAll('[data-count]').forEach(num=>{
+          const t=parseFloat(num.dataset.count);
+          const s=num.dataset.suffix||'';
+          countUp(num,t,s,1400);
+        });
+      }
+      revealObs.unobserve(el);
+    }
+  });
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.word-wrap').forEach(el=>revealObs.observe(el));
+
+// wrap stats for count-up
+document.querySelectorAll('.stats-inner').forEach(el=>{
+  el.classList.add('stat-wrapper');
+  revealObs.observe(el);
+});
+
+// PARALLAX — hero photos drift on scroll
+const heroPhotos=document.getElementById('heroPhotos');
+window.addEventListener('scroll',()=>{
+  if(!heroPhotos)return;
+  const y=window.scrollY;
+  heroPhotos.style.transform=`translateY(${y*0.14}px)`;
+  heroPhotos.style.opacity=`${Math.max(0,1-y/600)}`;
+},{passive:true});
+
+// MAGNETIC BUTTON EFFECT on dark buttons
+document.querySelectorAll('.btn-dark,.btn-light').forEach(btn=>{
+  btn.addEventListener('mousemove',e=>{
+    const r=btn.getBoundingClientRect();
+    const x=(e.clientX-r.left-r.width/2)*.35;
+    const y=(e.clientY-r.top-r.height/2)*.35;
+    btn.style.transform=`translate(${x}px,${y}px) scale(1.04)`;
+  });
+  btn.addEventListener('mouseleave',()=>{btn.style.transform=''});
+});
+
+
+</script>
+</body>
+</html>
