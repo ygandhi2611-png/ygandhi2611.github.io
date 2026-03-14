@@ -18,7 +18,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overf
 /* NAV */
 nav{position:fixed;top:0;width:100%;z-index:200;padding:0 3rem;height:54px;display:flex;align-items:center;justify-content:space-between;background:#231B18;border-bottom:1px solid rgba(251,252,248,.07);transition:box-shadow .4s}
 nav.scrolled{box-shadow:0 4px 30px rgba(35,27,24,.35)}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#FBFCF8;letter-spacing:-.01em}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#FBFCF8;letter-spacing:-.01em;display:flex;align-items:center}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{color:rgba(251,252,248,.65);font-size:.78rem;letter-spacing:.06em;text-decoration:none;text-transform:uppercase;font-weight:600;transition:color .2s}
 .nav-links a:hover{color:#FBFCF8}
@@ -219,6 +219,7 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#licenses">Licenses</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -547,18 +548,39 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
         <div class="edu-yr">2018 – 2022</div>
         <div class="edu-desc">Pharmaceutical sciences, drug development, GMP manufacturing, and quality systems</div>
       </div>
-      <div class="edu-card reveal" style="transition-delay:.24s">
+    </div>
+  </div>
+</section>
+
+<!-- LICENSES & CERTIFICATIONS -->
+<section id="licenses" style="background:var(--bg)">
+  <div class="s-inner">
+    <p class="eyebrow reveal">Professional Credentials</p>
+    <h2 class="big-title reveal">Licenses &amp; <span>Certifications</span></h2>
+    <div class="s-divider reveal"></div>
+    <div class="edu-grid">
+
+      <div class="edu-card reveal" style="transition-delay:.0s">
         <div class="edu-deg">RAPS Member</div>
         <div class="edu-sch">Regulatory Affairs Professionals Society</div>
         <div class="edu-yr">2025 – Present</div>
         <div class="edu-desc">Active member of the leading global regulatory affairs professional organization</div>
       </div>
-      <div class="edu-card reveal" style="transition-delay:.36s">
+
+      <div class="edu-card reveal" style="transition-delay:.12s">
+        <div class="edu-deg">Drug Development Product Management Specialization</div>
+        <div class="edu-sch">Coursera</div>
+        <div class="edu-yr">Issued Feb 2023 · Credential ID: 22KX3WFD3UDZ</div>
+        <div class="edu-desc" style="margin-top:.8rem">Good Clinical Practice (GCP) · Regulatory Guidelines · Clinical Trials · Project Planning · Drug Commercialisation · New Drug Application (NDA) · Investigational New Drug (IND)</div>
+      </div>
+
+      <div class="edu-card reveal" style="transition-delay:.24s">
         <div class="edu-deg">Professional Certifications</div>
         <div class="edu-sch">Coursera / Continuing Education</div>
         <div class="edu-yr">Ongoing</div>
-        <div class="edu-desc">Manufacturing &amp; Product Quality · Drug Development · Project Management: Healthcare · Registered Pharmacist</div>
+        <div class="edu-desc">Manufacturing &amp; Product Quality · Project Management: Healthcare · Registered Pharmacist</div>
       </div>
+
     </div>
   </div>
 </section>
