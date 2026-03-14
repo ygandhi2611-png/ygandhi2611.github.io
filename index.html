@@ -192,6 +192,674 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
 <!-- NAV -->
 <nav id="mainNav">
   <div class="nav-logo">
+    <svg width="48" height="48" viewBox="228 128 224 224" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:.6rem">
+      <style>
+        @media(prefers-reduced-motion:no-preference){
+          .draw{stroke-dasharray:300;stroke-dashoffset:300;animation:draw 1.8s cubic-bezier(.4,0,.2,1) forwards}
+          .draw-ring{stroke-dasharray:700;stroke-dashoffset:700;animation:draw 2s cubic-bezier(.4,0,.2,1) forwards}
+          .draw-ring2{stroke-dasharray:560;stroke-dashoffset:560;animation:draw 2s cubic-bezier(.4,0,.2,1) .15s forwards}
+          .d1{animation-delay:.1s}.d2{animation-delay:.3s}.d3{animation-delay:.5s}
+          .d4{animation-delay:.7s}.d5{animation-delay:.9s}.d6{animation-delay:1s}.d7{animation-delay:1.1s}
+          @keyframes draw{to{stroke-dashoffset:0}}
+          .pulse{animation:pulse 3.5s ease-in-out 2.2s infinite}
+          @keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
+        }
+      </style>
+      <g class="pulse">
+        <circle cx="340" cy="240" r="112" fill="none" stroke="#FBFCF8" stroke-width="2" class="draw-ring"/>
+        <circle cx="340" cy="240" r="90" fill="none" stroke="#FBFCF8" stroke-width="1.5" opacity="0.75" class="draw-ring2"/>
+        <line x1="304" y1="194" x2="327" y2="230" fill="none" stroke="#FBFCF8" stroke-width="5" stroke-linecap="round" class="draw d1"/>
+        <line x1="350" y1="194" x2="327" y2="230" fill="none" stroke="#FBFCF8" stroke-width="5" stroke-linecap="round" class="draw d2"/>
+        <line x1="327" y1="230" x2="327" y2="265" fill="none" stroke="#FBFCF8" stroke-width="5" stroke-linecap="round" class="draw d3"/>
+        <path d="M 358 218 A 25 25 0 1 0 358 266" fill="none" stroke="#FBFCF8" stroke-width="5" stroke-linecap="round" class="draw d4"/>
+        <line x1="358" y1="242" x2="383" y2="242" fill="none" stroke="#FBFCF8" stroke-width="5" stroke-linecap="round" class="draw d5"/>
+        <line x1="383" y1="242" x2="383" y2="266" fill="none" stroke="#FBFCF8" stroke-width="5" stroke-linecap="round" class="draw d6"/>
+      </g>
+    </svg>Yash Gandhi
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#licenses">Licenses</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-photo-wrap">
+      <div class="hp-main">
+        <img src="photo1.jpg" alt="Yash Gandhi" onerror="this.parentNode.style.background='#e8e4df'"/>
+      </div>
+    </div>
+    <div class="hero-text-wrap">
+      <p class="hero-eyebrow">Regulatory Affairs &amp; Quality Assurance</p>
+      <h1 class="hero-name">Yash Gandhi</h1>
+      <p class="hero-tagline">MS Regulatory Affairs · Northeastern University<br/>MedTech · Pharma · Biologics</p>
+      <p class="hero-sub">FDA · EU MDR · ISO 13485 · 21 CFR 820 · cGMP · Veeva Vault</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-dark">Get in Touch</a>
+        <a href="#experience" class="btn-light">View Experience</a>
+        <a href="resume.pdf" download="Yash_Gandhi_Resume.pdf" class="btn-resume">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="s-inner">
+    <div class="about-grid">
+      <div class="about-photos reveal">
+        <div class="ap-main">
+          <img src="photo3.jpg" alt="Yash Gandhi at Northeastern" onerror="this.parentNode.style.background='#e8e4df'"/>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <p class="eyebrow">About</p>
+        <h2 class="big-title">Where compliance,<br/>quality &amp; <span>execution</span> meet.</h2>
+        <div class="s-divider"></div>
+        <p>I operate at the intersection of regulatory strategy, quality assurance, and operational execution — taking full ownership of moving all three forward across MedTech, Pharma, and Biologics environments.</p>
+        <p>At <strong style="color:#231B18;font-weight:700">Becton, Dickinson and Company</strong>, I led the migration of global regulatory repositories, authored SOPs, and supported 510(k), EU MDR, and Q-Submission documentation. My foundation at <strong style="color:#231B18;font-weight:700">Alembic Pharmaceuticals</strong> gave me hands-on GMP experience in sterile injectable manufacturing.</p>
+        <p>Currently volunteering at <strong style="color:#231B18;font-weight:700">Project Insulin</strong>, contributing to biosimilar insulin regulatory strategy including pre-BLA preparation and early CMC documentation frameworks.</p>
+        <div class="about-pills">
+          <span class="apill dark">Open to Opportunities</span>
+          <span class="apill dark">F-1 OPT / STEM</span>
+          <span class="apill">Washington DC-Baltimore Area</span>
+          <span class="apill">RAPS Member 2025</span>
+          <span class="apill">MS Reg. Affairs · NEU</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="reveal"><div class="stat-n" data-count="3" data-suffix="+">3+</div><div class="stat-l">Years Experience</div></div>
+    <div class="reveal" style="transition-delay:.1s"><div class="stat-n" data-count="6" data-suffix="">6</div><div class="stat-l">Key Projects</div></div>
+    <div class="reveal" style="transition-delay:.2s"><div class="stat-n" data-count="5" data-suffix="">5</div><div class="stat-l">Roles &amp; Positions</div></div>
+    <div class="reveal" style="transition-delay:.3s"><div class="stat-n" data-count="30" data-suffix="%">30%</div><div class="stat-l">Review Cycle Reduction · BD</div></div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="s-inner">
+    <p class="eyebrow reveal">Work History</p>
+    <h2 class="big-title reveal">Professional <span>Experience</span></h2>
+    <div class="s-divider reveal"></div>
+    <div class="exp-list">
+
+      <!-- Project Insulin -->
+      <div class="exp-card reveal">
+        <div class="exp-company-row">
+          <div class="exp-logo">
+            <img src="logo-pi.png" alt="Project Insulin" onerror="this.style.display='none'"/>
+          </div>
+          <span class="exp-company-name">Project Insulin</span>
+          <span class="exp-company-sep">·</span>
+          <span class="exp-company-loc">Cambridge, MA</span>
+        </div>
+        <div class="exp-role-row">
+          <div class="exp-role">Regulatory Affairs Project Analyst <span style="font-weight:400;font-size:.82rem;color:var(--soft)">(Volunteer)</span></div>
+          <div class="exp-date">Dec 2025 – Present</div>
+        </div>
+        <div class="exp-place">Biosimilars · Pre-IND Regulatory Support</div>
+        <ul class="exp-ul">
+          <li>Leading early-stage regulatory planning for a biosimilar insulin initiative, independently developing CMC documentation frameworks, basic quality system structure, and traceability controls.</li>
+          <li>Executing comprehensive gap analysis between reference product data and preliminary process controls to align project documentation with FDA 21 CFR 210/211 guidelines.</li>
+          <li>Authoring foundational QA documents, stability outlines, analytical-method templates, and change-control forms in collaboration with an external regulatory consultant to establish cGMP compliance groundwork.</li>
+        </ul>
+      </div>
+
+      <!-- BD -->
+      <div class="exp-card reveal">
+        <div class="exp-company-row">
+          <div class="exp-logo">
+            <img src="logo-bd.svg" alt="Becton Dickinson" onerror="this.style.display='none'"/>
+          </div>
+          <span class="exp-company-name">Becton, Dickinson and Company</span>
+          <span class="exp-company-sep">·</span>
+          <span class="exp-company-loc">San Diego, CA</span>
+        </div>
+        <div class="exp-role-row">
+          <div class="exp-role">Regulatory Affairs Specialist II</div>
+          <div class="exp-date">Jan – Jun 2025</div>
+        </div>
+        <div class="exp-place">Medical Device · Class II · FDA &amp; EU MDR</div>
+        <ul class="exp-ul">
+          <li>Planned and executed regulatory documentation for FDA 510(k) and EU MDR Class II device submissions, ensuring compliance with applicable QSR and ISO standards.</li>
+          <li>Standardized FDA and EU MDR submission content by applying regulatory frameworks and translating technical data into reviewer-friendly documentation for Q-Sub and technical files.</li>
+          <li>Led migration of global Regulatory Affairs and Quality repositories from Confluence Server to Confluence Cloud, restructuring submission documentation into standardized, inspection-ready frameworks aligned with FDA QSR and ISO 13485.</li>
+          <li>Designed structured metadata taxonomy, document lifecycle controls, and versioning logic to ensure traceability across 510(k), EU MDR Technical Files, and post-market activities, strengthening regulatory data integrity.</li>
+          <li>Established controlled document routing workflows and authored SOPs governing document control, submission archiving, and repository governance to maintain inspection readiness.</li>
+          <li>Partnered with global Regulatory Affairs teams to map legacy submission records into cloud-based RIM-aligned architecture, resolving documentation gaps and improving document retrieval efficiency by ~30%.</li>
+        </ul>
+      </div>
+
+      <!-- RegDesk -->
+      <div class="exp-card reveal">
+        <div class="exp-company-row">
+          <div class="exp-logo">
+            <img src="logo-rd.png" alt="RegDesk" onerror="this.style.display='none'"/>
+          </div>
+          <span class="exp-company-name">RegDesk Inc.</span>
+          <span class="exp-company-sep">·</span>
+          <span class="exp-company-loc">Boston, MA</span>
+        </div>
+        <div class="exp-role-row">
+          <div class="exp-role">Regulatory Affairs Intern</div>
+          <div class="exp-date">Oct – Dec 2024</div>
+        </div>
+        <div class="exp-place">EU MDR · Cybersecurity Compliance</div>
+        <ul class="exp-ul">
+          <li>Conducted regulatory intelligence on EU MDR Annex I and MDCG 2019-16, developing cybersecurity compliance briefs for CE Mark submissions across multiple EU regions.</li>
+          <li>Monitored MDR updates and maintained an internal compliance tracker to streamline documentation planning and improve submission readiness.</li>
+        </ul>
+      </div>
+
+      <!-- Alembic -->
+      <div class="exp-card reveal">
+        <div class="exp-company-row">
+          <div class="exp-logo">
+            <img src="logo-alembic.png" alt="Alembic Pharmaceuticals" onerror="this.style.display='none'"/>
+          </div>
+          <span class="exp-company-name">Alembic Pharmaceuticals Ltd.</span>
+          <span class="exp-company-sep">·</span>
+          <span class="exp-company-loc">Vadodara, India</span>
+        </div>
+        <div class="exp-role-row">
+          <div class="exp-role">Supply Chain Management Analyst (PPC)</div>
+          <div class="exp-date">Feb – Aug 2023</div>
+        </div>
+        <div class="exp-place">Sterile Injectables · cGMP · ANDA</div>
+        <ul class="exp-ul">
+          <li>Collaborated with Regulatory Affairs (CMC), QA/QC, and Manufacturing teams to support ANDA Module 3 documentation, batch readiness, and post-approval change control activities.</li>
+          <li>Performed compliance reviews of batch records, deviations, and labeling documentation in alignment with FDA 21 CFR 210/211 and cGMP requirements.</li>
+          <li>Utilized SAP Production Planning to track GMP manufacturing status, validation data, and batch disposition timelines, reducing audit preparation time by ~15%.</li>
+          <li>Maintained daily tracking reports to ensure audit readiness, data integrity, and regulatory lifecycle visibility.</li>
+        </ul>
+      </div>
+
+      <!-- Suyaash -->
+      <div class="exp-card reveal">
+        <div class="exp-company-row">
+          <div class="exp-logo">
+            <img src="logo-Suyaash.png" alt="Suyaash Pharmaceuticals" onerror="this.style.display='none'"/>
+          </div>
+          <span class="exp-company-name">Suyaash Pharmaceuticals</span>
+          <span class="exp-company-sep">·</span>
+          <span class="exp-company-loc">Bilimora, India</span>
+        </div>
+        <div class="exp-role-row">
+          <div class="exp-role">QA Analyst Intern</div>
+          <div class="exp-date">May – Jul 2021</div>
+        </div>
+        <div class="exp-place">Ophthalmic Manufacturing · GMP · GDP</div>
+        <ul class="exp-ul">
+          <li>Reviewed GMP batch records for ophthalmic formulations to ensure audit readiness and GDP compliance.</li>
+          <li>Assisted in drafting and updating SOPs, coordinating documentation flow between production and quality teams.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="s-inner">
+    <p class="eyebrow reveal">Core Competencies</p>
+    <h2 class="big-title reveal">Skills &amp; <span>Expertise</span></h2>
+    <div class="s-divider reveal"></div>
+    <div class="skills-grid">
+      <div class="skill-category reveal" style="transition-delay:.0s">
+        <div class="skill-cat-title">Regulatory Affairs</div>
+        <div class="skill-tags">
+          <span class="skill-tag">FDA 510(k)</span><span class="skill-tag">EU MDR</span>
+          <span class="skill-tag">ANDA / CMC</span><span class="skill-tag">eCTD Structure</span>
+          <span class="skill-tag">Q-Submission</span><span class="skill-tag">Pre-BLA / INTERACT</span>
+          <span class="skill-tag">Health Canada Class III</span><span class="skill-tag">ISO 14971</span>
+          <span class="skill-tag">Regulatory Writing</span><span class="skill-tag">Submission Lifecycle</span>
+        </div>
+      </div>
+      <div class="skill-category reveal" style="transition-delay:.1s">
+        <div class="skill-cat-title">Quality Systems</div>
+        <div class="skill-tags">
+          <span class="skill-tag">ISO 13485</span><span class="skill-tag">FDA QSR 21 CFR 820</span>
+          <span class="skill-tag">cGMP 21 CFR 211</span><span class="skill-tag">CAPA Management</span>
+          <span class="skill-tag">Change Control</span><span class="skill-tag">ALCOA+ Data Integrity</span>
+          <span class="skill-tag">SOP Development</span><span class="skill-tag">GxP Compliance</span>
+          <span class="skill-tag">Root Cause Analysis</span><span class="skill-tag">Audit Readiness</span>
+        </div>
+      </div>
+      <div class="skill-category reveal" style="transition-delay:.2s">
+        <div class="skill-cat-title">Tools &amp; Platforms</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Veeva Vault</span><span class="skill-tag">Atlassian Confluence</span>
+          <span class="skill-tag">SAP ERP (PP)</span><span class="skill-tag">SharePoint</span>
+          <span class="skill-tag">eSTAR</span><span class="skill-tag">RIMS</span>
+          <span class="skill-tag">MS Project</span><span class="skill-tag">Adobe Acrobat</span>
+          <span class="skill-tag">Microsoft Visio</span><span class="skill-tag">Draw.io</span>
+        </div>
+      </div>
+      <div class="skill-category reveal" style="transition-delay:.3s">
+        <div class="skill-cat-title">Domain Expertise</div>
+        <div class="skill-tags">
+          <span class="skill-tag">MedTech</span><span class="skill-tag">Pharmaceuticals</span>
+          <span class="skill-tag">Biologics / Biosimilars</span><span class="skill-tag">Sterile Injectables</span>
+          <span class="skill-tag">Design Controls</span><span class="skill-tag">Labeling &amp; UDI</span>
+          <span class="skill-tag">Deviation Management</span><span class="skill-tag">Cross-Functional Leadership</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="s-inner">
+    <p class="eyebrow reveal">Selected Work</p>
+    <h2 class="big-title reveal">Key <span>Projects</span></h2>
+    <div class="s-divider reveal"></div>
+    <div class="proj-grid">
+      <div class="proj-card reveal" style="transition-delay:.0s" onclick="openModal('p1')">
+        <div class="proj-n">Project 01</div>
+        <div class="proj-t">FDA 510(k) Summary &amp; Q-Submission Strategy</div>
+        <div class="proj-d">VascuCage™ IVC Filter — Class II vascular device 510(k) documentation, predicate analysis, and FDA pre-submission strategy.</div>
+        <div class="proj-date">Apr – Jun 2025</div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.1s" onclick="openModal('p2')">
+        <div class="proj-n">Project 02</div>
+        <div class="proj-t">Global Regulatory Strategy — AlignCraft TeethAligners</div>
+        <div class="proj-d">Multi-market regulatory strategy for a Class II clear aligner device across the US, EU, UK, Japan, Australia, and Brazil.</div>
+        <div class="proj-date">Sep – Dec 2024</div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.2s" onclick="openModal('p3')">
+        <div class="proj-n">Project 03</div>
+        <div class="proj-t">Health Canada Class III Strategy — VascuCage™ IVC Filter</div>
+        <div class="proj-d">Designed regulatory strategy for the VascuCage™ IVC filter justifying Class III classification per CMDR, aligned with FDA and EU MDR rules.</div>
+        <div class="proj-date">Apr – Jun 2025</div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.0s" onclick="openModal('p4')">
+        <div class="proj-n">Project 04</div>
+        <div class="proj-t">FDA-Ready CMC Package — Sterile Injectable Product</div>
+        <div class="proj-d">Developed a mock eCTD Module 3 CMC package including control strategy, analytical methods, and stability plans aligned with ICH Q8–Q12.</div>
+        <div class="proj-date">Jan – Apr 2025</div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.1s" onclick="openModal('p5')">
+        <div class="proj-n">Project 05</div>
+        <div class="proj-t">Quality Risk Management — FMEA Case Study</div>
+        <div class="proj-d">Applied Failure Modes and Effects Analysis to evaluate risks in a medical device component manufacturing process, identifying mitigation strategies.</div>
+        <div class="proj-date">2024</div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.2s" onclick="openModal('p6')">
+        <div class="proj-n">Project 06</div>
+        <div class="proj-t">Quality System SOP Development — FDA QSR &amp; ISO 13485</div>
+        <div class="proj-d">Developed three QSR/ISO 13485-compliant SOPs for CAPA, Document Control, and Handling &amp; Distribution for a hypothetical device launch.</div>
+        <div class="proj-date">Jan – Mar 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT MODALS -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnBg(event)">
+  <div class="modal" id="modalBox">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-header">
+      <div class="modal-eyebrow" id="mEyebrow"></div>
+      <div class="modal-title" id="mTitle"></div>
+      <div class="modal-date" id="mDate"></div>
+      <div class="modal-divider"></div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section"><h4>Overview</h4><p id="mOverview"></p></div>
+      <div class="modal-section"><h4>Approach</h4><p id="mApproach"></p></div>
+      <div class="modal-section"><h4>Regulatory Insight</h4><p id="mInsight"></p></div>
+      <div class="modal-section"><h4>Regulatory &amp; Quality Context</h4><div class="modal-tags" id="mContext"></div></div>
+      <div class="modal-section"><h4>Key Skills Demonstrated</h4><div class="modal-tags" id="mSkills"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="s-inner">
+    <p class="eyebrow reveal">Academic Background</p>
+    <h2 class="big-title reveal">Education &amp; <span>Certifications</span></h2>
+    <div class="s-divider reveal"></div>
+    <div class="edu-grid">
+      <div class="edu-card reveal" style="transition-delay:.0s">
+        <div class="edu-deg">Master of Science — Regulatory Affairs</div>
+        <div class="edu-sch">Northeastern University · Boston, MA</div>
+        <div class="edu-yr">Sep 2023 – Jun 2025</div>
+        <div class="edu-desc">FDA submissions, EU MDR, Quality Systems, CMC documentation, Global Regulatory Strategy</div>
+      </div>
+      <div class="edu-card reveal" style="transition-delay:.12s">
+        <div class="edu-deg">Bachelor of Pharmacy</div>
+        <div class="edu-sch">Dharmsinh Desai University · Nadiad, India</div>
+        <div class="edu-yr">2018 – 2022</div>
+        <div class="edu-desc">Pharmaceutical sciences, drug development, GMP manufacturing, and quality systems</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LICENSES & CERTIFICATIONS -->
+<section id="licenses" style="background:var(--bg)">
+  <div class="s-inner">
+    <p class="eyebrow reveal">Professional Credentials</p>
+    <h2 class="big-title reveal">Licenses &amp; <span>Certifications</span></h2>
+    <div class="s-divider reveal"></div>
+    <div class="edu-grid">
+
+      <div class="edu-card reveal" style="transition-delay:.0s">
+        <div class="edu-deg">RAPS Member</div>
+        <div class="edu-sch">Regulatory Affairs Professionals Society</div>
+        <div class="edu-yr">2025 – Present</div>
+        <div class="edu-desc">Active member of the leading global regulatory affairs professional organization</div>
+      </div>
+
+      <div class="edu-card reveal" style="transition-delay:.12s">
+        <div class="edu-deg">Drug Development Product Management Specialization</div>
+        <div class="edu-sch">Coursera</div>
+        <div class="edu-yr">Issued Feb 2023 · Credential ID: 22KX3WFD3UDZ</div>
+        <div class="edu-desc" style="margin-top:.8rem">Good Clinical Practice (GCP) · Regulatory Guidelines · Clinical Trials · Project Planning · Drug Commercialisation · New Drug Application (NDA) · Investigational New Drug (IND)</div>
+      </div>
+
+      <div class="edu-card reveal" style="transition-delay:.24s">
+        <div class="edu-deg">Professional Certifications</div>
+        <div class="edu-sch">Coursera / Continuing Education</div>
+        <div class="edu-yr">Ongoing</div>
+        <div class="edu-desc">Manufacturing &amp; Product Quality · Project Management: Healthcare · Registered Pharmacist</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="eyebrow" style="color:#FBFCF8;margin-bottom:1rem">Get in Touch</p>
+  <h2 class="contact-hl reveal">Let's Connect.</h2>
+  <p class="contact-sub reveal">Actively seeking roles in Regulatory Affairs, Quality Assurance, and Manufacturing Quality across the U.S.</p>
+  <div class="contact-row reveal">
+    <a href="mailto:ygandhi.corpdesk@outlook.com" class="clink" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+      ygandhi.corpdesk@outlook.com
+    </a>
+    <button class="clink primary" onclick="navigator.clipboard.writeText('ygandhi.corpdesk@outlook.com').then(()=>{this.textContent='✓ Copied!';setTimeout(()=>this.textContent='Copy Email',2000)})">Copy Email</button>
+    <a href="https://www.linkedin.com/in/yash-gandhi26/" target="_blank" class="clink">
+      <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="tel:+12409780794" class="clink">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.27-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      +1 (240) 978-0794
+    </a>
+  </div>
+</section>
+
+<footer>© 2025 Yash Gandhi · Regulatory Affairs &amp; Quality Assurance · Clarksburg, MD</footer>
+
+<script>
+const projects={
+  p1:{eyebrow:'Project 01',title:'FDA 510(k) Summary & Q-Submission Strategy — VascuCage™ IVC Filter',date:'Apr – Jun 2025',overview:'This project involved developing U.S. FDA regulatory documentation for the VascuCage™ Inferior Vena Cava Filter, a Class II intravascular medical device intended to prevent recurrent pulmonary embolism. The work focused on preparing a comprehensive regulatory strategy aligned with FDA premarket notification requirements.',approach:'The project began with evaluation of device classification and regulatory pathway under the FDA 510(k) framework. Predicate analysis was conducted using the Crux® Vena Cava Filter (K150262) to establish substantial equivalence. A full 510(k) Summary was drafted in accordance with 21 CFR 807.92 including device description, indications for use, technological characteristics, and performance testing considerations. The CDRH Refuse-to-Accept checklist and eSTAR submission template were applied to ensure submission completeness. A Q-Submission Pre-Sub meeting request was prepared to obtain FDA feedback on clinical study design, investigational device exemption considerations, and safety testing related to the novel polymer component PolyThread.',insight:'Early engagement with the FDA through the Q-Submission program can significantly reduce regulatory uncertainty during device development. Obtaining FDA feedback on testing strategies, clinical study design, and investigational requirements before initiating formal studies helps sponsors align development plans with regulatory expectations and avoid costly delays during review.',context:['FDA 510(k) Premarket Notification pathway','21 CFR 807.92 submission summary requirements','FDA CDRH Refuse-to-Accept checklist','eSTAR electronic submission format','21 CFR 812 Investigational Device Exemption requirements'],skills:['Regulatory strategy development','Predicate device analysis','510(k) documentation preparation','FDA pre-submission planning','Medical device regulatory classification']},
+  p2:{eyebrow:'Project 02',title:'Global Regulatory Strategy — AlignCraft TeethAligners',date:'Sep – Dec 2024',overview:'This capstone project involved developing a global regulatory and market entry strategy for AlignCraft TeethAligners, a Class II clear aligner orthodontic device. The project evaluated regulatory pathways and commercialization considerations across six international markets including the United States, European Union, United Kingdom, Japan, Australia, and Brazil.',approach:'As project lead, responsibilities included coordinating regulatory research, aligning cross-functional deliverables, and developing the overall regulatory strategy. The U.S. pathway was evaluated through the FDA 510(k) process with predicate analysis referencing Invisalign and ClearCorrect devices under Product Code NXC. International regulatory strategies were developed based on regional frameworks including EU MDR, PMDA in Japan, TGA in Australia, and ANVISA in Brazil. Additional work included drafting biocompatibility assessment, risk evaluation, and adverse event reporting sections aligned with FDA 21 CFR Part 803. Regulatory budgeting and market entry cost projections were prepared using Excel.',insight:'Developing a global regulatory strategy requires aligning product development with multiple regulatory frameworks simultaneously. Considering regional requirements early in development helps reduce redundant testing and supports efficient regulatory submissions across international markets.',context:['FDA 510(k) Premarket Notification pathway','EU Medical Device Regulation (MDR)','PMDA regulatory framework in Japan','TGA medical device regulations in Australia','ANVISA medical device regulatory system in Brazil'],skills:['Global regulatory strategy development','Regulatory classification analysis','International regulatory pathway evaluation','Cross-functional project leadership','Regulatory planning and market entry strategy']},
+  p3:{eyebrow:'Project 03',title:'Health Canada Class III Regulatory Strategy — VascuCage™ IVC Filter',date:'Apr – Jun 2025',overview:'This project focused on designing a regulatory strategy for VascuCage™, a hypothetical inferior vena cava filter intended for prevention of pulmonary embolism. The objective was to determine appropriate classification and outline regulatory submission considerations for the Canadian market.',approach:'The device classification was evaluated under the Canadian Medical Devices Regulations and justified as a Class III device based on its long-term implantation and vascular interaction. The strategy incorporated global regulatory considerations including comparison with FDA product code DTK and EU MDR classification rules. Relevant standards such as ISO 10993 for biocompatibility and ISO 25539 for cardiovascular implants were reviewed to define required testing and documentation.',insight:'Medical device classification under Health Canada regulations plays a critical role in determining submission requirements and regulatory timelines. Devices classified as Class III require a Medical Device License supported by evidence of safety and effectiveness, making early regulatory planning essential for successful market authorization.',context:['Health Canada Medical Devices Regulations','FDA regulatory product classification comparisons','EU MDR regulatory alignment','ISO 10993 and ISO 25539 standards'],skills:['Global regulatory strategy development','Device classification analysis','Regulatory standards evaluation','International market access planning']},
+  p4:{eyebrow:'Project 04',title:'FDA-Ready CMC Package Development — Sterile Injectable Product',date:'Jan – Apr 2025',overview:'This project involved development of a mock Chemistry, Manufacturing, and Controls package for a sterile injectable pharmaceutical product prepared according to eCTD Module 3 requirements. The objective was to design a structured CMC documentation framework that aligns with FDA expectations and international regulatory guidelines.',approach:'The CMC package included drug substance and drug product characterization, control strategy development, analytical method descriptions, and stability study planning. Risk assessment principles were applied using FMEA to evaluate potential risks across manufacturing and quality processes. Data management practices were structured around ALCOA+ principles to ensure data integrity throughout documentation.',insight:'Strong Chemistry, Manufacturing, and Controls documentation is fundamental to regulatory review of pharmaceutical products. Establishing a clear control strategy, validated analytical methods, and stability programs ensures consistent product quality and regulatory confidence throughout the product lifecycle.',context:['ICH Q8 Pharmaceutical Development','ICH Q9 Quality Risk Management','ICH Q10 Pharmaceutical Quality System','ICH Q12 Lifecycle Management'],skills:['CMC documentation development','Quality risk assessment','Regulatory guideline interpretation','Data integrity and compliance principles']},
+  p5:{eyebrow:'Project 05',title:'Quality Risk Management Case Study — Failure Modes and Effects Analysis',date:'2024',overview:'This project focused on applying Failure Modes and Effects Analysis to evaluate potential risks associated with a medical device component and its manufacturing process. The objective was to identify possible failure scenarios, assess their impact on product performance and patient safety, and determine appropriate mitigation strategies.',approach:'The analysis began by mapping key process steps and identifying potential failure modes that could occur during manufacturing, assembly, or device operation. Each failure mode was evaluated using severity, occurrence, and detectability criteria. Risk priority values were calculated to identify areas requiring immediate attention or additional controls. The assessment also considered potential process improvements, inspection controls, and design modifications to reduce overall risk.',insight:'Applying structured risk management tools such as Failure Modes and Effects Analysis early in product development allows organizations to identify potential safety and performance risks before they impact manufacturing or clinical use. Early risk identification enables implementation of preventive controls and strengthens overall product reliability.',context:['ISO 14971 medical device risk management principles','Quality system risk-based thinking','Failure Modes and Effects Analysis methodology','Quality risk management concepts aligned with industry best practices'],skills:['Risk analysis and prioritization','Failure mode identification','Quality systems thinking','Regulatory compliance awareness']},
+  p6:{eyebrow:'Project 06',title:'Quality System SOP Development — FDA QSR & ISO 13485',date:'Jan – Mar 2025',overview:'This project focused on developing standard operating procedures aligned with FDA Quality System Regulation and ISO 13485 quality management standards. The objective was to create foundational quality procedures that support regulatory compliance and operational consistency for a medical device organization.',approach:'Three SOPs were developed covering Corrective and Preventive Actions, Document Control, and Handling and Distribution. Each procedure incorporated risk-based decision making and GMP principles. Process workflows, responsibilities, and documentation requirements were defined to support traceability and regulatory inspection readiness.',insight:'Well-designed quality system procedures form the foundation of regulatory compliance in medical device organizations. SOPs aligned with FDA Quality System Regulation and ISO 13485 standards help ensure consistent implementation of quality processes and support inspection readiness.',context:['FDA Quality System Regulation','ISO 13485 Quality Management Systems','Good Manufacturing Practice principles'],skills:['SOP development and documentation','Quality system process design','Compliance framework alignment','Inspection readiness planning']}
+};
+
+function openModal(id){
+  const d=projects[id];
+  document.getElementById('mEyebrow').textContent=d.eyebrow;
+  document.getElementById('mTitle').textContent=d.title;
+  document.getElementById('mDate').textContent=d.date;
+  document.getElementById('mOverview').textContent=d.overview;
+  document.getElementById('mApproach').textContent=d.approach;
+  document.getElementById('mInsight').textContent=d.insight;
+  document.getElementById('mContext').innerHTML=d.context.map(t=>`<span class="modal-tag">${t}</span>`).join('');
+  document.getElementById('mSkills').innerHTML=d.skills.map(t=>`<span class="modal-tag">${t}</span>`).join('');
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  document.getElementById('modalBox').scrollTop=0;
+}
+function closeModal(){document.getElementById('modalOverlay').classList.remove('open');document.body.style.overflow=''}
+function closeModalOnBg(e){if(e.target===document.getElementById('modalOverlay'))closeModal()}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+const nav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true});
+const nt=document.getElementById('navToggle'),nl=document.getElementById('navLinks');
+nt.addEventListener('click',()=>nl.classList.toggle('open'));
+nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nl.classList.remove('open')));
+
+function initWordAnimations(){
+  document.querySelectorAll('.big-title,.hero-name,.contact-hl').forEach(el=>{
+    if(el.dataset.wordDone)return;
+    el.dataset.wordDone='1';el.classList.add('word-wrap');
+    const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);
+    const nodes=[];let n;
+    while(n=walker.nextNode())nodes.push(n);
+    nodes.forEach(tn=>{
+      const frag=document.createDocumentFragment();
+      tn.textContent.split(/(\s+)/).forEach(w=>{
+        if(w.trim()){const s=document.createElement('span');s.className='word';s.textContent=w;frag.appendChild(s);frag.appendChild(document.createTextNode(' '));}
+      });
+      tn.replaceWith(frag);
+    });
+  });
+}
+initWordAnimations();
+
+function countUp(el,target,suffix,dur){
+  let start=null;
+  (function step(ts){
+    if(!start)start=ts;
+    const p=Math.min((ts-start)/dur,1),e=1-Math.pow(1-p,4);
+    el.textContent=Math.floor(target*e)+suffix;
+    if(p<1)requestAnimationFrame(step);
+  })(performance.now());
+}
+
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target;
+    el.classList.add('visible');
+    if(el.classList.contains('word-wrap'))
+      el.querySelectorAll('.word').forEach((w,i)=>setTimeout(()=>{w.style.opacity='1';w.style.transform='none'},i*42));
+    if(el.classList.contains('stat-wrapper'))
+      el.querySelectorAll('[data-count]').forEach(n=>countUp(n,+n.dataset.count,n.dataset.suffix||'',1400));
+    io.unobserve(el);
+  });
+},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal,.word-wrap').forEach(el=>io.observe(el));
+document.querySelectorAll('.stats-inner').forEach(el=>{el.classList.add('stat-wrapper');io.observe(el)});
+
+const hw=document.querySelector('.hero-photo-wrap');
+window.addEventListener('scroll',()=>{if(hw)hw.style.transform=`translateY(${window.scrollY*.08}px)`},{passive:true});
+
+document.querySelectorAll('.btn-dark,.btn-light,.btn-resume').forEach(btn=>{
+  btn.addEventListener('mousemove',e=>{
+    const r=btn.getBoundingClientRect();
+    btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.35}px,${(e.clientY-r.top-r.height/2)*.35}px) scale(1.04)`;
+  });
+  btn.addEventListener('mouseleave',()=>btn.style.transform='');
+});
+</script>
+</body>
+</html>.hero-name{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,6.5vw,6rem);font-weight:800;letter-spacing:-.03em;line-height:1.0;color:#231B18;margin-bottom:1.4rem}
+.hero-tagline{font-size:1.05rem;font-weight:300;color:var(--muted);line-height:1.7;margin-bottom:.4rem}
+.hero-sub{font-size:.85rem;color:var(--soft);font-weight:400;margin-bottom:2.5rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-dark{padding:.85rem 2.2rem;border-radius:50px;background:#231B18;color:#FBFCF8;font-size:.88rem;font-weight:600;text-decoration:none;transition:.2s;box-shadow:0 4px 18px rgba(35,27,24,.22);display:inline-block}
+.btn-dark:hover{background:#3d302b;transform:scale(1.02)}
+.btn-light{padding:.85rem 2.2rem;border-radius:50px;background:rgba(35,27,24,.06);color:#231B18;font-size:.88rem;font-weight:600;text-decoration:none;transition:.2s;border:1.5px solid var(--border);display:inline-block}
+.btn-light:hover{background:rgba(35,27,24,.12)}
+.btn-resume{padding:.85rem 2.2rem;border-radius:50px;background:transparent;color:#231B18;font-size:.88rem;font-weight:600;text-decoration:none;transition:.2s;border:1.5px solid #231B18;display:inline-flex;align-items:center;gap:.5rem}
+.btn-resume:hover{background:#231B18;color:#FBFCF8}
+
+/* SECTION SHARED */
+.s-inner{max-width:1080px;margin:0 auto;padding:7rem 2.5rem}
+.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:.7rem}
+.big-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;letter-spacing:-.03em;line-height:1.12;color:#231B18;margin-bottom:1.5rem}
+.big-title span{color:#231B18;border-bottom:3px solid rgba(35,27,24,.25);padding-bottom:3px}
+.s-divider{width:48px;height:3px;background:linear-gradient(90deg,#231B18,rgba(35,27,24,.2));border-radius:3px;margin-bottom:2.8rem}
+
+/* ABOUT */
+#about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr;gap:3rem}
+.about-photos{position:relative;height:auto}
+.ap-main{position:relative;width:100%;height:340px;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);border:3px solid #fff;transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s}
+.ap-main:hover{transform:scale(1.02);box-shadow:0 24px 60px rgba(35,27,24,.18)}
+.ap-main img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(1.03) saturate(1.05)}
+.about-text .eyebrow{text-align:left}
+.about-text p{font-size:.94rem;color:var(--muted);line-height:1.9;margin-bottom:1rem;font-weight:300}
+.about-pills{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.5rem}
+.apill{font-size:.74rem;font-weight:600;padding:.3rem .9rem;border-radius:50px;background:rgba(35,27,24,.06);border:1px solid var(--border);color:#231B18}
+.apill.dark{background:#231B18;border-color:#231B18;color:#FBFCF8}
+
+/* STATS */
+.stats-strip{background:#231B18;padding:4rem 2rem}
+.stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+.stat-n{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:800;color:#FBFCF8;line-height:1}
+.stat-l{font-size:.72rem;color:#FBFCF8;margin-top:.4rem;font-weight:500;letter-spacing:.05em}
+
+/* EXPERIENCE — two-layer card layout */
+#experience{background:var(--bg)}
+.exp-list{display:flex;flex-direction:column}
+.exp-card{padding:2.2rem 0;border-top:1px solid var(--border);transition:background .3s,padding .3s,border-radius .3s,margin .3s}
+.exp-card:hover{background:rgba(35,27,24,.025);padding-left:1.4rem;padding-right:1.4rem;border-radius:16px;margin:0 -1.4rem}
+.exp-company-row{display:flex;align-items:center;gap:.55rem;margin-bottom:.9rem}
+.exp-logo{width:20px;height:20px;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:3px}
+.exp-logo img{width:20px;height:20px;object-fit:contain;object-position:center;filter:grayscale(100%) opacity(.55)}
+.exp-company-name{font-size:.78rem;font-weight:600;color:var(--soft);letter-spacing:.01em}
+.exp-company-sep{font-size:.7rem;color:var(--border)}
+.exp-company-loc{font-size:.75rem;color:var(--soft);font-weight:400;opacity:.75}
+.exp-role-row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem;margin-bottom:.35rem}
+.exp-role{font-size:1.05rem;font-weight:700;color:#231B18;letter-spacing:-.01em;line-height:1.3}
+.exp-date{font-size:.72rem;font-weight:600;color:var(--soft);white-space:nowrap;letter-spacing:.02em}
+.exp-place{font-size:.78rem;color:var(--soft);font-weight:400;margin-bottom:1rem;letter-spacing:.01em}
+.exp-ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem}
+.exp-ul li{font-size:.85rem;color:var(--muted);line-height:1.78;padding-left:1.1rem;position:relative}
+.exp-ul li::before{content:'';position:absolute;left:0;top:.72em;width:4px;height:4px;border-radius:50%;background:var(--soft)}
+
+/* SKILLS */
+#skills{background:var(--bg2)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.3rem;margin-top:3.5rem}
+.skill-category{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.8rem;box-shadow:var(--shadow);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s;border-top:3px solid #231B18}
+.skill-category:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.skill-cat-title{font-family:'Playfair Display',serif;font-weight:700;margin-bottom:1.1rem;color:#231B18;font-size:1rem}
+.skill-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.skill-tag{padding:.28rem .8rem;border-radius:50px;font-size:.73rem;font-weight:600;background:rgba(35,27,24,.06);border:1px solid rgba(35,27,24,.12);color:#231B18;transition:background .22s,color .22s,transform .22s,box-shadow .22s;cursor:default}
+.skill-tag:hover{background:#231B18;color:#FBFCF8;transform:translateY(-2px) scale(1.04);box-shadow:0 4px 12px rgba(35,27,24,.18)}
+
+/* PROJECTS */
+#projects{background:var(--bg)}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3.5rem}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s,border-color .4s;transform-style:preserve-3d;cursor:pointer;position:relative;overflow:hidden}
+.proj-card::after{content:'View Details →';position:absolute;bottom:1.5rem;right:1.5rem;font-size:.72rem;font-weight:600;color:var(--soft);opacity:0;transition:opacity .3s}
+.proj-card:hover{transform:translateY(-6px) rotateX(2deg);box-shadow:0 20px 50px rgba(35,27,24,.14);border-color:rgba(35,27,24,.3)}
+.proj-card:hover::after{opacity:1}
+.proj-n{font-size:.68rem;font-weight:700;color:var(--soft);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.7rem}
+.proj-t{font-size:.96rem;font-weight:700;color:#231B18;line-height:1.35;margin-bottom:.5rem}
+.proj-d{font-size:.81rem;color:var(--muted);line-height:1.75;font-weight:300}
+.proj-date{font-size:.7rem;color:var(--soft);margin-top:.9rem;font-weight:500}
+
+/* PROJECT MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(35,27,24,.55);z-index:500;display:flex;align-items:center;justify-content:center;padding:2rem;opacity:0;pointer-events:none;transition:opacity .35s cubic-bezier(.16,1,.3,1);backdrop-filter:blur(6px)}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--bg);border-radius:24px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;box-shadow:0 32px 80px rgba(35,27,24,.22);transform:translateY(30px) scale(.97);transition:transform .35s cubic-bezier(.16,1,.3,1);position:relative}
+.modal-overlay.open .modal{transform:translateY(0) scale(1)}
+.modal-header{padding:2.5rem 2.5rem 0}
+.modal-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:.6rem}
+.modal-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:#231B18;line-height:1.15;margin-bottom:.4rem}
+.modal-date{font-size:.75rem;color:var(--soft);font-weight:500;margin-bottom:1.5rem}
+.modal-divider{height:2px;background:linear-gradient(90deg,#231B18,rgba(35,27,24,.1));border-radius:2px;margin-bottom:2rem}
+.modal-body{padding:0 2.5rem 2.5rem}
+.modal-section{margin-bottom:1.8rem}
+.modal-section h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#231B18;margin-bottom:.7rem}
+.modal-section p{font-size:.88rem;color:var(--muted);line-height:1.85;font-weight:300}
+.modal-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
+.modal-tag{font-size:.72rem;font-weight:600;padding:.25rem .8rem;border-radius:50px;background:rgba(35,27,24,.06);border:1px solid rgba(35,27,24,.12);color:#231B18}
+.modal-close{position:absolute;top:1.2rem;right:1.2rem;width:36px;height:36px;border-radius:50%;background:rgba(35,27,24,.08);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#231B18;transition:.2s;font-family:'Inter',sans-serif}
+.modal-close:hover{background:#231B18;color:#FBFCF8}
+.modal::-webkit-scrollbar{width:4px}
+.modal::-webkit-scrollbar-thumb{background:rgba(35,27,24,.15);border-radius:2px}
+
+/* EDUCATION */
+#education{background:var(--bg2)}
+.edu-grid{display:grid;grid-template-columns:1fr;gap:1.2rem;margin-top:3.5rem}
+.edu-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s}
+.edu-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#231B18}
+.edu-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(35,27,24,.12)}
+.edu-deg{font-size:.97rem;font-weight:700;color:#231B18;margin-bottom:.25rem}
+.edu-sch{font-size:.8rem;color:var(--soft);font-weight:600;margin-bottom:.3rem}
+.edu-yr{font-size:.73rem;color:var(--muted);margin-bottom:.8rem}
+.edu-desc{font-size:.8rem;color:var(--muted);line-height:1.75;font-weight:300}
+
+/* CONTACT */
+#contact{background:#231B18;padding:7rem 2rem;text-align:center}
+.contact-hl{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:800;letter-spacing:-.04em;color:#FBFCF8;margin-bottom:1rem;line-height:1.05}
+.contact-sub{font-size:1rem;font-weight:300;color:rgba(251,252,248,.85);margin-bottom:3rem;max-width:480px;margin-left:auto;margin-right:auto}
+.contact-row{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.clink{display:flex;align-items:center;gap:.6rem;background:rgba(251,252,248,.08);border:1px solid rgba(251,252,248,.12);border-radius:50px;padding:.75rem 1.5rem;color:#FBFCF8;text-decoration:none;font-size:.83rem;font-weight:500;transition:.2s}
+.clink:hover{background:rgba(251,252,248,.16);transform:translateY(-2px)}
+.clink svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
+.clink.primary{background:#FBFCF8;color:#231B18;border-color:#FBFCF8;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif}
+.clink.primary:hover{background:#ede8e4;border-color:#ede8e4}
+footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8rem;text-align:center;font-size:.73rem;color:rgba(251,252,248,.2)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.word-wrap .word{display:inline-block;opacity:0;transform:translateY(28px) rotate(.4deg);transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)}
+.word-wrap.visible .word{opacity:1;transform:translateY(0) rotate(0deg)}
+
+/* MOBILE */
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-btns{justify-content:center}
+  .hero-photo-wrap{max-width:340px;margin:0 auto}
+  .hp-main{height:420px}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .proj-grid{grid-template-columns:1fr 1fr}
+  nav{padding:0 1.5rem}
+  .s-inner{padding:5rem 1.5rem}
+  .exp-role-row{flex-direction:column;gap:.2rem}
+  .exp-date{align-self:flex-start}
+}
+@media(max-width:640px){
+  .nav-links{display:none;flex-direction:column;position:fixed;top:54px;left:0;right:0;background:#231B18;padding:2rem;gap:1.5rem;border-bottom:1px solid rgba(251,252,248,.08)}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:flex}
+  .proj-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr}
+  .modal{border-radius:16px}
+  .modal-header,.modal-body{padding-left:1.5rem;padding-right:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-logo">
     <svg width="36" height="26" viewBox="285 180 120 105" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:.6rem">
       <style>
         @media(prefers-reduced-motion:no-preference){
