@@ -715,25 +715,24 @@ const io=new IntersectionObserver(entries=>{
 document.querySelectorAll('.reveal,.word-wrap').forEach(el=>io.observe(el));
 document.getElementById('yr').textContent=new Date().getFullYear();
 
-// ── VISITOR TRACKER ──
-(async function(){
+// ── VISITOR TRACKER (localStorage — works on GitHub Pages) ──
+(function(){
   const ADMIN_KEY = 'yg_admin_2026'; // ← change to your own password
   const today = new Date().toISOString().slice(0,10);
   const sessionKey = 'yg_visited_' + today;
 
+  // ── storage helpers (localStorage) ──
+  function lsGet(key){ try{ return localStorage.getItem(key); }catch(e){ return null; } }
+  function lsSet(key,val){ try{ localStorage.setItem(key,val); }catch(e){} }
+
+  // Count visit once per day per browser
   if(!sessionStorage.getItem(sessionKey)){
     sessionStorage.setItem(sessionKey,'1');
-    try{
-      let totalRes = await window.storage.get('visits_total').catch(()=>null);
-      let todayRes = await window.storage.get('visits_' + today).catch(()=>null);
-      let total      = totalRes ? parseInt(totalRes.value)||0 : 0;
-      let todayCount = todayRes ? parseInt(todayRes.value)||0 : 0;
-      total++; todayCount++;
-      await window.storage.set('visits_total', String(total));
-      await window.storage.set('visits_' + today, String(todayCount));
-      await window.storage.set('visits_last',
-        new Date().toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}));
-    }catch(e){}
+    const total      = parseInt(lsGet('visits_total'))||0;
+    const todayCount = parseInt(lsGet('visits_'+today))||0;
+    lsSet('visits_total', total+1);
+    lsSet('visits_'+today, todayCount+1);
+    lsSet('visits_last', new Date().toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}));
   }
 
   // Triple-click footer to open admin panel
@@ -757,26 +756,24 @@ document.getElementById('yr').textContent=new Date().getFullYear();
     const W = canvas.width, H = canvas.height;
     const max = Math.max(...values, 1);
     const n = labels.length;
-    const barW = Math.max(2, Math.floor((W - (n+1)*3) / n));
-    const gap  = Math.floor((W - barW*n) / (n+1));
+    const barW = Math.max(2, Math.floor((W-(n+1)*3)/n));
+    const gap  = Math.floor((W-barW*n)/(n+1));
     ctx.clearRect(0,0,W,H);
     ctx.strokeStyle='rgba(251,252,248,.1)';
     ctx.lineWidth=1;
     ctx.beginPath(); ctx.moveTo(0,H-14); ctx.lineTo(W,H-14); ctx.stroke();
     const maxVal = Math.max(...values);
     values.forEach((v,i)=>{
-      const x = gap + i*(barW+gap);
+      const x = gap+i*(barW+gap);
       const barH = Math.round(((H-24)*v)/max);
       const y = H-14-barH;
       const grad = ctx.createLinearGradient(0,y,0,H-14);
       if(v===maxVal && v>0){
-        grad.addColorStop(0,'#f59e0b');
-        grad.addColorStop(1,'rgba(245,158,11,.2)');
+        grad.addColorStop(0,'#f59e0b'); grad.addColorStop(1,'rgba(245,158,11,.2)');
       } else {
-        grad.addColorStop(0,'rgba(251,252,248,.55)');
-        grad.addColorStop(1,'rgba(251,252,248,.1)');
+        grad.addColorStop(0,'rgba(251,252,248,.55)'); grad.addColorStop(1,'rgba(251,252,248,.1)');
       }
-      ctx.fillStyle = grad;
+      ctx.fillStyle=grad;
       ctx.beginPath();
       if(ctx.roundRect) ctx.roundRect(x,y,barW,barH,[3,3,0,0]);
       else ctx.rect(x,y,barW,barH);
@@ -794,44 +791,35 @@ document.getElementById('yr').textContent=new Date().getFullYear();
     });
   }
 
-  // Build data for each view
-  async function getData(mode){
-    const labels=[], values=[];
-    const now = new Date();
-
+  function getData(mode){
+    const labels=[], values=[], now=new Date();
     if(mode==='7d'){
       document.getElementById('ap-chart-title').textContent='Last 7 Days';
       for(let i=6;i>=0;i--){
         const d=new Date(now); d.setDate(d.getDate()-i);
         labels.push(d.toLocaleDateString('en-US',{weekday:'short'}).slice(0,2));
-        const r=await window.storage.get('visits_'+d.toISOString().slice(0,10)).catch(()=>null);
-        values.push(r ? parseInt(r.value)||0 : 0);
+        values.push(parseInt(lsGet('visits_'+d.toISOString().slice(0,10)))||0);
       }
     } else if(mode==='4w'){
       document.getElementById('ap-chart-title').textContent='Last 4 Weeks';
       for(let i=3;i>=0;i--){
-        // sum 7 days per week bucket
         let sum=0;
         for(let j=0;j<7;j++){
           const d=new Date(now); d.setDate(d.getDate()-(i*7+j));
-          const r=await window.storage.get('visits_'+d.toISOString().slice(0,10)).catch(()=>null);
-          sum += r ? parseInt(r.value)||0 : 0;
+          sum+=parseInt(lsGet('visits_'+d.toISOString().slice(0,10)))||0;
         }
-        const wStart=new Date(now); wStart.setDate(wStart.getDate()-i*7);
-        labels.push('W'+(4-i));
-        values.push(sum);
+        labels.push('W'+(4-i)); values.push(sum);
       }
     } else if(mode==='12m'){
       document.getElementById('ap-chart-title').textContent='Last 12 Months';
       for(let i=11;i>=0;i--){
-        const d=new Date(now.getFullYear(), now.getMonth()-i, 1);
+        const d=new Date(now.getFullYear(),now.getMonth()-i,1);
         const yr=d.getFullYear(), mo=d.getMonth();
-        const daysInMonth=new Date(yr,mo+1,0).getDate();
+        const days=new Date(yr,mo+1,0).getDate();
         let sum=0;
-        for(let day=1;day<=daysInMonth;day++){
-          const key=`${yr}-${String(mo+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
-          const r=await window.storage.get('visits_'+key).catch(()=>null);
-          sum += r ? parseInt(r.value)||0 : 0;
+        for(let day=1;day<=days;day++){
+          const k=`${yr}-${String(mo+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+          sum+=parseInt(lsGet('visits_'+k))||0;
         }
         labels.push(d.toLocaleDateString('en-US',{month:'short'}).slice(0,3));
         values.push(sum);
@@ -839,43 +827,37 @@ document.getElementById('yr').textContent=new Date().getFullYear();
     } else if(mode==='3y'){
       document.getElementById('ap-chart-title').textContent='Last 3 Years';
       for(let i=2;i>=0;i--){
-        const yr=now.getFullYear()-i;
-        let sum=0;
+        const yr=now.getFullYear()-i; let sum=0;
         for(let mo=0;mo<12;mo++){
-          const daysInMonth=new Date(yr,mo+1,0).getDate();
-          for(let day=1;day<=daysInMonth;day++){
-            const key=`${yr}-${String(mo+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
-            const r=await window.storage.get('visits_'+key).catch(()=>null);
-            sum += r ? parseInt(r.value)||0 : 0;
+          const days=new Date(yr,mo+1,0).getDate();
+          for(let day=1;day<=days;day++){
+            const k=`${yr}-${String(mo+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+            sum+=parseInt(lsGet('visits_'+k))||0;
           }
         }
-        labels.push(String(yr));
-        values.push(sum);
+        labels.push(String(yr)); values.push(sum);
       }
     }
-    return {labels, values};
+    return {labels,values};
   }
 
-  // Current active tab
-  window._apMode = '7d';
-  window.switchTab = async function(mode, btn){
-    window._apMode = mode;
+  window._apMode='7d';
+  window.switchTab=function(mode,btn){
+    window._apMode=mode;
     document.querySelectorAll('.ap-tab').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
-    const {labels,values} = await getData(mode);
-    drawChart(labels, values);
+    const {labels,values}=getData(mode);
+    drawChart(labels,values);
   };
 
-  async function showAnalytics(){
-    const totalRes = await window.storage.get('visits_total').catch(()=>null);
-    const todayRes = await window.storage.get('visits_' + today).catch(()=>null);
-    const lastRes  = await window.storage.get('visits_last').catch(()=>null);
-    document.getElementById('stat-total').textContent = totalRes ? totalRes.value : '0';
-    document.getElementById('stat-today').textContent = todayRes ? todayRes.value : '0';
-    document.getElementById('stat-last').textContent  = lastRes ? 'Last visit: '+lastRes.value : 'No visits yet';
-    document.getElementById('analytics-panel').style.display = 'block';
-    const {labels,values} = await getData(window._apMode||'7d');
-    drawChart(labels, values);
+  function showAnalytics(){
+    document.getElementById('stat-total').textContent = lsGet('visits_total')||'0';
+    document.getElementById('stat-today').textContent = lsGet('visits_'+today)||'0';
+    const last = lsGet('visits_last');
+    document.getElementById('stat-last').textContent  = last ? 'Last visit: '+last : 'No visits yet';
+    document.getElementById('analytics-panel').style.display='block';
+    const {labels,values}=getData(window._apMode||'7d');
+    drawChart(labels,values);
   }
 })();
 
