@@ -686,6 +686,8 @@ const io=new IntersectionObserver(entries=>{
 },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal,.word-wrap').forEach(el=>io.observe(el));
 document.getElementById('yr').textContent=new Date().getFullYear();
+window.addEventListener('beforeunload',()=>window.scrollTo(0,0));
+window.scrollTo(0,0);
 
 const hw=document.querySelector('.hero-photo-wrap');
 window.addEventListener('scroll',()=>{if(hw)hw.style.transform=`translateY(${window.scrollY*.08}px)`},{passive:true});
