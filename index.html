@@ -294,6 +294,7 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
         <p>I operate at the intersection of regulatory strategy, quality assurance, and operational execution — taking full ownership of moving all three forward across MedTech, Pharma, and Biologics environments.</p>
         <p>At <strong style="color:#231B18;font-weight:700">Becton, Dickinson and Company</strong>, I led the migration of global regulatory repositories, authored SOPs, and supported 510(k), EU MDR, and Q-Submission documentation. My foundation at <strong style="color:#231B18;font-weight:700">Alembic Pharmaceuticals</strong> gave me hands-on GMP experience in sterile injectable manufacturing.</p>
         <p>Currently volunteering at <strong style="color:#231B18;font-weight:700">Project Insulin</strong>, contributing to biosimilar insulin regulatory strategy including pre-BLA preparation and early CMC documentation frameworks.</p>
+        <p>Outside of formal roles, I design and build free tools like <strong style="color:#231B18;font-weight:700">RegAtlas</strong> and <strong style="color:#231B18;font-weight:700">RegIQ</strong> — applying the same regulatory knowledge to product thinking and learning regulatory systems by building them.</p>
         <div class="about-pills">
           <span class="apill dark">Open to Opportunities</span>
           <span class="apill dark">F-1 OPT / STEM</span>
@@ -578,7 +579,6 @@ footer{background:#231B18;border-top:1px solid rgba(251,252,248,.07);padding:1.8
       <div class="modal-eyebrow" id="mEyebrow"></div>
       <div class="modal-title" id="mTitle"></div>
       <div class="modal-date" id="mDate"></div>
-      <a class="btn-dark" id="mLive" href="#" target="_blank" rel="noopener" style="display:none;margin-top:1rem;font-size:.8rem;padding:.6rem 1.4rem">View Live Project ↗</a>
       <div class="modal-divider"></div>
     </div>
     <div class="modal-body">
@@ -686,8 +686,6 @@ function openModal(id){
   document.getElementById('mEyebrow').textContent=d.eyebrow;
   document.getElementById('mTitle').textContent=d.title;
   document.getElementById('mDate').textContent=d.date;
-  const mLive=document.getElementById('mLive');
-  if(d.live){mLive.href=d.live;mLive.style.display='inline-flex';}else{mLive.style.display='none';}
   document.getElementById('mOverview').textContent=d.overview;
   document.getElementById('mApproach').textContent=d.approach;
   document.getElementById('mInsight').textContent=d.insight;
